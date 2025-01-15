@@ -1,0 +1,15 @@
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\bin\Debug\net8.0\Logica.deps.json
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\bin\Debug\net8.0\Logica.dll
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\bin\Debug\net8.0\Logica.pdb
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\obj\Debug\net8.0\Logica.csproj.AssemblyReference.cache
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\obj\Debug\net8.0\Logica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\obj\Debug\net8.0\Logica.AssemblyInfoInputs.cache
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\obj\Debug\net8.0\Logica.AssemblyInfo.cs
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\obj\Debug\net8.0\Logica.csproj.CoreCompileInputs.cache
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\obj\Debug\net8.0\Logica.dll
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\obj\Debug\net8.0\refint\Logica.dll
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\obj\Debug\net8.0\Logica.pdb
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\obj\Debug\net8.0\ref\Logica.dll
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\bin\Debug\net8.0\Datos.dll
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\bin\Debug\net8.0\Datos.pdb
+C:\Users\Dlsr2\source\repos\ReportsC#\Clases\obj\Debug\net8.0\Logica.csproj.Up2Date
