@@ -122,6 +122,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FinanciasDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\ClientData\CientDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\ClientData\CientDataForm.Designer.cs">
+      <DependentUpon>CientDataForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\ErrorForm\ErrForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,11 +140,11 @@
     <Compile Include="Interfaz\Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\Login\RegisterForm.cs">
+    <Compile Include="Interfaz\Login\RegistraForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\Login\RegisterForm.Designer.cs">
-      <DependentUpon>RegisterForm.cs</DependentUpon>
+    <Compile Include="Interfaz\Login\RegistraForm.Designer.cs">
+      <DependentUpon>RegistraForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\RegisterF\RegisterPrestamos.cs">
       <SubType>Form</SubType>
@@ -196,14 +202,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Interfaz\ClientData\CientDataForm.resx">
+      <DependentUpon>CientDataForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\ErrorForm\ErrForm.resx">
       <DependentUpon>ErrForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\Login\RegisterForm.resx">
-      <DependentUpon>RegisterForm.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz\Login\RegistraForm.resx">
+      <DependentUpon>RegistraForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\RegisterF\RegisterPrestamos.resx">
       <DependentUpon>RegisterPrestamos.cs</DependentUpon>

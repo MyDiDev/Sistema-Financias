@@ -1,5 +1,7 @@
 ﻿using Datos.data;
 using System;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Logica.clases
 {
@@ -22,6 +24,16 @@ namespace Logica.clases
             Garantia = garantia;
         }
 
+        public Prestamo(int id, int meses)
+        {
+            Id = id;
+            Meses = meses;
+        }
+
+        public Prestamo(int id)
+        {
+            Id = id;
+        }
 
         Data data = new Data();
 
@@ -30,12 +42,12 @@ namespace Logica.clases
             decimal TasaInteres = -1;
             if (Meses <= 3)
                 TasaInteres = 0.10M;
-            else if (Meses >= 4 || Meses <= 6)
+            else if (Meses <= 6)
                 TasaInteres = 0.08M;
-            else if (Meses >= 7 || Meses <= 12)
+            else if (Meses <= 12)
                 TasaInteres = 0.07M;
             else
-                TasaInteres = 0.05M;
+                TasaInteres = 0.15M;
 
             return TasaInteres;
         }
@@ -50,44 +62,52 @@ namespace Logica.clases
         //    return (decimal)couta;
         //}
 
-        public decimal CalcInteresCompuesto()
+        //public decimal CalcInteresCompuesto()
+        //{
+        //    double r = (double)CalcInteres();
+        //    int t = Meses / 12;
+        //    int n = 12;
+
+
+        //    double InteresCompuesto = Monto * Math.Pow(1 + (r / n), n * t);
+        //    return (decimal)InteresCompuesto;
+        //}
+
+        public decimal CalcularMontoTotal(decimal salario)
         {
-            double r = (double)CalcInteres();
-            int t = Meses / 12;
-            int n = 12;
-
-
-            double InteresCompuesto = Monto * Math.Pow(1 + (r / n), n * t);
-            return (decimal)InteresCompuesto;
+            decimal SalarioMax = 4 * salario;
+            decimal interes = SalarioMax * CalcInteres();
+            decimal MontoTotal = SalarioMax + interes;
+            return MontoTotal;
         }
 
-        public bool RealizarPrestamo(string emailCliente, string tipoInteres, decimal salario,  decimal montoAnterior, decimal montoAbonado, int mora)
-        {
-            if ((decimal)Monto > (salario * 4) || !Garantia)
-            {
-                return false;
-            }
-            else
-            {
-                decimal Interes = -1;
-                decimal r = 0m;
+        public int getLoanId() => data.GetLoanID(Id);
 
-                switch (tipoInteres)
+        public bool RealizarPrestamo(string emailCliente, decimal salario,  decimal montoAnterior, decimal montoAbonado, int mora)
+        {
+            try
+            {
+                decimal SalarioMax = 4 * salario;
+                if (montoAnterior > SalarioMax || !Garantia)
                 {
-                    case "simple":
-                        r = CalcInteres();
-                        break;
-                    case "compuesto":
-                        r = CalcInteresCompuesto();
-                        break;
+                    return false;
                 }
 
-                decimal newAmount = montoAbonado - (decimal)Monto;
+                decimal porcientoInteres = CalcInteres();
+                decimal newAmount = montoAnterior - montoAbonado;
+                decimal MontoTotal = CalcularMontoTotal(salario);
 
+                bool loanResult = data.MakeLoan(emailCliente, montoAnterior, Meses, (double)porcientoInteres, FechaPrestamo, Garantia);
+                bool amortizationResult = data.MakeAm(emailCliente, montoAnterior, montoAbonado, newAmount, mora);
 
-
-                return data.MakeLoan(emailCliente, Monto, Meses, (double)r, FechaPrestamo, Garantia)  && data.MakeAm(emailCliente, montoAbonado, montoAnterior, newAmount, mora);
+                return loanResult && amortizationResult;
+            }
+            catch (SqlException e)
+            {
+                throw e;
             }
         }
+
+        public DataTable getLoanData() => data.GetLoanData(Id);
     }
 }

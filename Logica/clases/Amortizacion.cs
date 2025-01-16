@@ -1,5 +1,6 @@
 ﻿using Datos.data;
 using System;
+using System.Data;
 using System.Runtime.Remoting.Messaging;
 
 namespace Logica.clases
@@ -23,8 +24,14 @@ namespace Logica.clases
             Mora = mora;
         }
 
-        Data data = new Data();
+        public Amortizacion(int prestamoId)
+        {
+            PrestamoId = prestamoId;
+        }
+
+            Data data = new Data();
 
         public bool RealizarAmortizacion(string clientEmail) => data.MakeAm(clientEmail, MontoAnterior, MontoAbonado, NuevoMonto, PrestamoId);
+        public DataTable getAmortizacionData() => data.GetAmData(PrestamoId);
     }
 }

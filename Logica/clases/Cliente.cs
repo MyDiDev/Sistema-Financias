@@ -25,6 +25,17 @@ namespace Logica.clases
             Moras = moras;
         }
 
+
+        public Cliente(string nombre, string correo, string telefono, string direccion, double sueldo, string garantia)
+        {
+            Nombre = nombre;
+            Correo = correo;
+            Telefono = telefono;
+            Direccion = direccion;
+            Sueldo = sueldo;
+            Garantia = garantia;
+        }
+
         public Cliente(string nombre, string correo)
         {
             Nombre = nombre;
@@ -36,13 +47,16 @@ namespace Logica.clases
             Nombre = nombre;
         }
 
+        public Cliente(int id)
+        {
+            Id = id;
+        }
 
         Data datos = new Data();
 
         public bool addClient() => datos.AddCLient(Nombre, Correo, Telefono, Direccion, Garantia, (decimal)Sueldo, Moras);
-
-        public List<string> getData() => datos.GetClientData(Correo);
-        
+        public bool updateClient(int id) => datos.UpdateClient(id, Nombre, Correo, Telefono, Direccion, Garantia, (decimal)Sueldo);
+        public List<string> getData() => datos.GetClientData(Id);
         public decimal getSalary() => datos.GetSalary(Correo);
         public bool checkClient() => datos.CheckClient(Nombre, Correo);
         public int getId() => datos.GetClientID(Correo);

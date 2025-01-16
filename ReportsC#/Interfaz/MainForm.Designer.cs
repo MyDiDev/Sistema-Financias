@@ -30,14 +30,15 @@
         {
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrestamo = new System.Windows.Forms.Button();
+            this.clientAmInfoBtn = new System.Windows.Forms.Button();
+            this.clientLoanInfoBtn = new System.Windows.Forms.Button();
+            this.clientInfoBtn = new System.Windows.Forms.Button();
             this.isAdmin = new System.Windows.Forms.Label();
             this.registerAdminBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.adminBtnReport = new System.Windows.Forms.Button();
             this.formPanel = new System.Windows.Forms.Panel();
-            this.clientInfoBtn = new System.Windows.Forms.Button();
-            this.clientLoanInfoBtn = new System.Windows.Forms.Button();
-            this.clientAmInfoBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
+            this.panel1.Controls.Add(this.btnPrestamo);
             this.panel1.Controls.Add(this.clientAmInfoBtn);
             this.panel1.Controls.Add(this.clientLoanInfoBtn);
             this.panel1.Controls.Add(this.clientInfoBtn);
@@ -65,6 +67,66 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(235, 724);
             this.panel1.TabIndex = 0;
+            // 
+            // btnPrestamo
+            // 
+            this.btnPrestamo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
+            this.btnPrestamo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrestamo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrestamo.Font = new System.Drawing.Font("Segoe UI Variable Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrestamo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPrestamo.Location = new System.Drawing.Point(0, 361);
+            this.btnPrestamo.Name = "btnPrestamo";
+            this.btnPrestamo.Size = new System.Drawing.Size(235, 74);
+            this.btnPrestamo.TabIndex = 11;
+            this.btnPrestamo.Text = "Realizar Prestamo";
+            this.btnPrestamo.UseVisualStyleBackColor = false;
+            this.btnPrestamo.Click += new System.EventHandler(this.btnPrestamo_Click);
+            // 
+            // clientAmInfoBtn
+            // 
+            this.clientAmInfoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
+            this.clientAmInfoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clientAmInfoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clientAmInfoBtn.Font = new System.Drawing.Font("Segoe UI Variable Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientAmInfoBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.clientAmInfoBtn.Location = new System.Drawing.Point(0, 292);
+            this.clientAmInfoBtn.Name = "clientAmInfoBtn";
+            this.clientAmInfoBtn.Size = new System.Drawing.Size(235, 74);
+            this.clientAmInfoBtn.TabIndex = 10;
+            this.clientAmInfoBtn.Text = "Amortizaciones";
+            this.clientAmInfoBtn.UseVisualStyleBackColor = false;
+            this.clientAmInfoBtn.Click += new System.EventHandler(this.clientAmInfoBtn_Click);
+            // 
+            // clientLoanInfoBtn
+            // 
+            this.clientLoanInfoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
+            this.clientLoanInfoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clientLoanInfoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clientLoanInfoBtn.Font = new System.Drawing.Font("Segoe UI Variable Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientLoanInfoBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.clientLoanInfoBtn.Location = new System.Drawing.Point(0, 221);
+            this.clientLoanInfoBtn.Name = "clientLoanInfoBtn";
+            this.clientLoanInfoBtn.Size = new System.Drawing.Size(235, 74);
+            this.clientLoanInfoBtn.TabIndex = 9;
+            this.clientLoanInfoBtn.Text = "Prestamos";
+            this.clientLoanInfoBtn.UseVisualStyleBackColor = false;
+            this.clientLoanInfoBtn.Click += new System.EventHandler(this.clientLoanInfoBtn_Click);
+            // 
+            // clientInfoBtn
+            // 
+            this.clientInfoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
+            this.clientInfoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clientInfoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clientInfoBtn.Font = new System.Drawing.Font("Segoe UI Variable Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientInfoBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.clientInfoBtn.Location = new System.Drawing.Point(0, 151);
+            this.clientInfoBtn.Name = "clientInfoBtn";
+            this.clientInfoBtn.Size = new System.Drawing.Size(235, 74);
+            this.clientInfoBtn.TabIndex = 8;
+            this.clientInfoBtn.Text = "Informacion Personal";
+            this.clientInfoBtn.UseVisualStyleBackColor = false;
+            this.clientInfoBtn.Click += new System.EventHandler(this.clientInfoBtn_Click);
             // 
             // isAdmin
             // 
@@ -128,49 +190,6 @@
             this.formPanel.Size = new System.Drawing.Size(964, 724);
             this.formPanel.TabIndex = 1;
             // 
-            // clientInfoBtn
-            // 
-            this.clientInfoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
-            this.clientInfoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.clientInfoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clientInfoBtn.Font = new System.Drawing.Font("Segoe UI Variable Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clientInfoBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.clientInfoBtn.Location = new System.Drawing.Point(0, 151);
-            this.clientInfoBtn.Name = "clientInfoBtn";
-            this.clientInfoBtn.Size = new System.Drawing.Size(235, 74);
-            this.clientInfoBtn.TabIndex = 8;
-            this.clientInfoBtn.Text = "Informacion Personal";
-            this.clientInfoBtn.UseVisualStyleBackColor = false;
-            this.clientInfoBtn.Click += new System.EventHandler(this.clientInfoBtn_Click);
-            // 
-            // clientLoanInfoBtn
-            // 
-            this.clientLoanInfoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
-            this.clientLoanInfoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.clientLoanInfoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clientLoanInfoBtn.Font = new System.Drawing.Font("Segoe UI Variable Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clientLoanInfoBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.clientLoanInfoBtn.Location = new System.Drawing.Point(0, 221);
-            this.clientLoanInfoBtn.Name = "clientLoanInfoBtn";
-            this.clientLoanInfoBtn.Size = new System.Drawing.Size(235, 74);
-            this.clientLoanInfoBtn.TabIndex = 9;
-            this.clientLoanInfoBtn.Text = "Prestamos";
-            this.clientLoanInfoBtn.UseVisualStyleBackColor = false;
-            // 
-            // clientAmInfoBtn
-            // 
-            this.clientAmInfoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
-            this.clientAmInfoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.clientAmInfoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clientAmInfoBtn.Font = new System.Drawing.Font("Segoe UI Variable Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clientAmInfoBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.clientAmInfoBtn.Location = new System.Drawing.Point(0, 292);
-            this.clientAmInfoBtn.Name = "clientAmInfoBtn";
-            this.clientAmInfoBtn.Size = new System.Drawing.Size(235, 74);
-            this.clientAmInfoBtn.TabIndex = 10;
-            this.clientAmInfoBtn.Text = "Amortizaciones";
-            this.clientAmInfoBtn.UseVisualStyleBackColor = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -199,5 +218,6 @@
         public System.Windows.Forms.Button clientInfoBtn;
         public System.Windows.Forms.Button adminBtnReport;
         public System.Windows.Forms.Button registerAdminBtn;
+        public System.Windows.Forms.Button btnPrestamo;
     }
 }

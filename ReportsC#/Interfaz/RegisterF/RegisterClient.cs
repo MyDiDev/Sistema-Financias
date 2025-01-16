@@ -23,7 +23,7 @@ namespace ReportsC_
                 return;
             }
 
-            Cliente cliente = new Cliente(nameClient.Text, mailClient.Text, phoneClient.Text, direcClient.Text, warranty.Text, (double)salaryClient.Value, (int)moraClient.Value);
+            Cliente cliente = new Cliente(nameClient.Text, mailClient.Text, phoneClient.Text, direcClient.Text, warranty.Text, (double)salaryClient.Value, 0);
             
             if (cliente.addClient())
             {

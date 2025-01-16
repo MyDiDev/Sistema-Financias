@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace Datos.data
 {
@@ -40,7 +42,6 @@ namespace Datos.data
             }
         }
 
-
         public int GetLoanID(string clientEmail)
         {
             if (string.IsNullOrEmpty(clientEmail))
@@ -60,10 +61,34 @@ namespace Datos.data
                     {
                         if (reader.Read())
                         {
-                            ClientId = reader.GetInt32(0);
+                            LoanID = reader.GetInt32(0);
                         }
 
-                        return ClientId;
+                        return LoanID;
+                    }
+                }
+            }
+        }
+        
+        //overload
+        public int GetLoanID(int clientId)
+        {
+            int LoanID = -1;
+
+            using (SqlConnection conn = new SqlConnection(stringConnection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT IDPrestamo FROM Prestamos WHERE IDCliente=@clientID;", conn))
+                {
+                    cmd.Parameters.AddWithValue("@clientID", clientId);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            LoanID = reader.GetInt32(0);
+                        }
+
+                        return LoanID;
                     }
                 }
             }
@@ -133,7 +158,6 @@ namespace Datos.data
             }
         }
 
-        
 
         //Client methods 
         public bool AddCLient(string nombre, string correo, string telefono, string direccion, string garantia, decimal sueldo, int mora)
@@ -145,17 +169,19 @@ namespace Datos.data
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Clientes (Nombre, Correo, Telefono, Direccion, Sueldo, Garantia, Moras) VALUES (@Nombre, @Correo, @Telefono, @Direccion, @Sueldo, @Moras);", conn);
-                    cmd.Parameters.AddWithValue("@Nombre", nombre);
-                    cmd.Parameters.AddWithValue("@Correo", correo);
-                    cmd.Parameters.AddWithValue("@Telefono", telefono);
-                    cmd.Parameters.AddWithValue("@Direccion", direccion);
-                    cmd.Parameters.AddWithValue("@Sueldo", sueldo);
-                    cmd.Parameters.AddWithValue("@Garantia", garantia);
-                    cmd.Parameters.AddWithValue("@Moras", mora);
+                    using (SqlCommand cmd = new SqlCommand("INSERT INTO Clientes (Nombre, Correo, Telefono, Direccion, Sueldo, Garantia, Moras) VALUES (@Nombre, @Correo, @Telefono, @Direccion, @Sueldo, @Garantia, @Moras);", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Nombre", nombre);
+                        cmd.Parameters.AddWithValue("@Correo", correo);
+                        cmd.Parameters.AddWithValue("@Telefono", telefono);
+                        cmd.Parameters.AddWithValue("@Direccion", direccion);
+                        cmd.Parameters.AddWithValue("@Sueldo", sueldo);
+                        cmd.Parameters.AddWithValue("@Garantia", garantia);
+                        cmd.Parameters.AddWithValue("@Moras", 0);
 
-                    cmd.ExecuteNonQuery();
-                    return true;
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
                 }
             }
             catch (SqlException e)
@@ -164,13 +190,41 @@ namespace Datos.data
             }
         }
 
+        public bool UpdateClient(int id, string nombre, string correo, string telefono, string direccion, string garantia, decimal sueldo)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(stringConnection))
+                {
+                    conn.Open();
 
-        public List<string> GetClientData(string clientEmail)
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Clientes SET Nombre=@Nombre, Correo=@Correo, Telefono=@Telefono, Direccion=@Direccion, Sueldo=@Sueldo WHERE IDCliente=@id", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@Nombre", nombre);
+                        cmd.Parameters.AddWithValue("@Correo", correo);
+                        cmd.Parameters.AddWithValue("@Telefono", telefono);
+                        cmd.Parameters.AddWithValue("@Direccion", direccion);
+                        cmd.Parameters.AddWithValue("@Sueldo", sueldo);
+                        
+                        int affectedRows = cmd.ExecuteNonQuery();
+                        return affectedRows > 0;
+                    }
+                }
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public List<string> GetClientData(int id)
         {
             try 
             {
                 List<string> data = new List<string>();
-                int clientId = GetClientID(clientEmail);
+
+                int Id = GetLoanID(id);
 
                 using (SqlConnection conn = new SqlConnection(stringConnection))
                 {
@@ -178,7 +232,8 @@ namespace Datos.data
 
                     using (SqlCommand cmd = new SqlCommand("SELECT * FROM Clientes WHERE IDCliente=@id", conn))
                     {
-                        cmd.Parameters.AddWithValue("@id", clientId);
+                        cmd.Parameters.AddWithValue("@id", id);
+
                         using(SqlDataReader reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
@@ -189,7 +244,6 @@ namespace Datos.data
                                 data.Add(reader.GetString(4));
                                 data.Add(reader.GetDecimal(5).ToString());
                                 data.Add(reader.GetString(6));
-                                data.Add(reader.GetInt32(7).ToString());
                             }
 
                             return data;
@@ -202,7 +256,6 @@ namespace Datos.data
                 throw e;
             }
         }
-
 
         public bool CheckClient(string clientName, string clientEmail)
         {
@@ -239,41 +292,50 @@ namespace Datos.data
 
         public decimal GetSalary(string clientEmail)
         {
-            if (string.IsNullOrEmpty(clientEmail))
-            {
-                return 0;
-            }
-
             decimal Salary = -1;
 
-            using (SqlConnection conn = new SqlConnection(stringConnection))
+            try
             {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT Sueldo FROM Clientes WHERE Correo=@correo;", conn))
+                if (string.IsNullOrEmpty(clientEmail))
                 {
-                    cmd.Parameters.AddWithValue("@correo", clientEmail);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            Salary = reader.GetDecimal(0);
-                        }
+                    return 0;
+                }
 
-                        return Salary;
+
+                using (SqlConnection conn = new SqlConnection(stringConnection))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SELECT Sueldo FROM Clientes WHERE Correo=@correo;", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@correo", clientEmail);
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                Salary = reader.GetDecimal(0);
+                            }
+
+                            return Salary;
+
+                        }
                     }
                 }
+
+            }
+            catch (SqlException)
+            {
+                return 0;
             }
         }
 
 
         //Prestamos Methods
 
-        public bool MakeLoan(string clientName, double monto, int meses, double interes, DateTime fechaPrestamo, bool garantia)
+        public bool MakeLoan(string clientName, decimal monto, int meses, double interes, DateTime fechaPrestamo, bool garantia)
         {
             try
             {
                 int ClientID = GetClientID(clientName);
-                int Garantia = (garantia) ? 1 : 0;
 
                 using (SqlConnection conn = new SqlConnection(stringConnection))
                 {
@@ -286,14 +348,71 @@ namespace Datos.data
                         cmd.Parameters.AddWithValue("@Meses", meses);
                         cmd.Parameters.AddWithValue("@Interes", interes);
                         cmd.Parameters.AddWithValue("@FechaPrestamo", fechaPrestamo);
-                        cmd.Parameters.AddWithValue("@Garantia", Garantia);
+                        cmd.Parameters.AddWithValue("@Garantia", 1);
                         cmd.ExecuteNonQuery();
-
                         return true;
                     }
                 }
 
             }catch (SqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public DataTable GetLoanData(int id)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(stringConnection))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM Prestamos WHERE IDCliente=@id", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+
+
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public DataTable GetAmData(int pId)
+        {
+            try
+            {
+                int ID = GetLoanID(pId);
+
+                using (SqlConnection conn = new SqlConnection(stringConnection))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM Amortizaciones WHERE IDPrestamo=@id", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", pId);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+            catch (SqlException e)
             {
                 throw e;
             }
@@ -311,14 +430,13 @@ namespace Datos.data
 
                     using (SqlCommand cmd = new SqlCommand("INSERT INTO Amortizaciones (IDPrestamo, MontoAnterior, MontoAbonado, NuevoMonto, Mora) VALUES (@IDPrestamo, @MontoAnterior, @MontoAbonado, @NuevoMonto, @Mora);", conn))
                     {
-                        cmd.Parameters.AddWithValue("@IDPrestamo", LoanID);
-                        cmd.Parameters.AddWithValue("@MontoAnterior", montoAnterior);
-                        cmd.Parameters.AddWithValue("@MontoAbonado", montoAbonado);
-                        cmd.Parameters.AddWithValue("@NuevoMonto", nuevoMonto);
-                        cmd.Parameters.AddWithValue("@Mora", mora);
+                        cmd.Parameters.Add("@IDPrestamo", SqlDbType.Int).Value = LoanID;
+                        cmd.Parameters.Add("@MontoAnterior", SqlDbType.Decimal).Value = montoAnterior;
+                        cmd.Parameters.Add("@MontoAbonado", SqlDbType.Decimal).Value = montoAbonado;
+                        cmd.Parameters.Add("@NuevoMonto", SqlDbType.Decimal).Value = nuevoMonto;
+                        cmd.Parameters.Add("@Mora", SqlDbType.Int).Value = mora;
 
                         cmd.ExecuteNonQuery();
-
                         return true;
                     }
                 }

@@ -1,6 +1,6 @@
 ﻿namespace ReportsC_.Interfaz.Login
 {
-    partial class RegisterForm
+    partial class RegistraForm
     {
         /// <summary>
         /// Required designer variable.
@@ -49,6 +49,7 @@
             // 
             // warranty
             // 
+            this.warranty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.warranty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(10)))), ((int)(((byte)(127)))));
             this.warranty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.warranty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -266,9 +267,9 @@
             // errMsg
             // 
             this.errMsg.LinkColor = System.Drawing.Color.Red;
-            this.errMsg.Location = new System.Drawing.Point(147, 496);
+            this.errMsg.Location = new System.Drawing.Point(147, 520);
             this.errMsg.Name = "errMsg";
-            this.errMsg.Size = new System.Drawing.Size(646, 36);
+            this.errMsg.Size = new System.Drawing.Size(646, 26);
             this.errMsg.TabIndex = 37;
             this.errMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -298,7 +299,7 @@
             this.label7.TabIndex = 39;
             this.label7.Text = "asegurate de llenar el formulario con el formato correcto";
             // 
-            // RegisterForm
+            // RegistraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -320,8 +321,7 @@
             this.Controls.Add(this.mailClient);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nameClient);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "RegisterForm";
+            this.Name = "RegistraForm";
             this.Text = "RegisterForm";
             this.Load += new System.EventHandler(this.RegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.salaryClient)).EndInit();

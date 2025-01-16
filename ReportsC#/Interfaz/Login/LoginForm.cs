@@ -44,6 +44,7 @@ namespace ReportsC_.Interfaz.Login
                 f.clientInfoBtn.Visible = false;
                 f.clientLoanInfoBtn.Visible = false;
                 f.clientAmInfoBtn.Visible = false;
+                f.btnPrestamo.Visible = false;
                 f.Show();
             }
             else
@@ -65,6 +66,7 @@ namespace ReportsC_.Interfaz.Login
                     f.clientInfoBtn.Visible = true;
                     f.clientLoanInfoBtn.Visible = true;
                     f.clientAmInfoBtn.Visible = true;
+                    f.btnPrestamo.Visible = true;
 
                     Hide();
                     f.Show();

@@ -115,4 +115,5 @@ C:\Users\Dlsr2\source\repos\ReportsC#\ReportsC#\obj\Debug\ReportsC_.Interfaz.Rep
 C:\Users\Dlsr2\source\repos\ReportsC#\ReportsC#\obj\Debug\ReportsC_.Interfaz.RegisterF.RegisterPrestamos.resources
 C:\Users\Dlsr2\source\repos\ReportsC#\ReportsC#\obj\Debug\ReportsC_.Interfaz.ErrorForm.ErrForm_cs.resources
 C:\Users\Dlsr2\source\repos\ReportsC#\ReportsC#\obj\Debug\ReportsC_.Interfaz.Login.LoginForm.resources
-C:\Users\Dlsr2\source\repos\ReportsC#\ReportsC#\obj\Debug\ReportsC_.Interfaz.Login.RegisterForm.resources
+C:\Users\Dlsr2\source\repos\ReportsC#\ReportsC#\obj\Debug\ReportsC_.Interfaz.Login.RegistraForm.resources
+C:\Users\Dlsr2\source\repos\ReportsC#\ReportsC#\obj\Debug\ReportsC_.Interfaz.ClientData.CientDataForm.resources

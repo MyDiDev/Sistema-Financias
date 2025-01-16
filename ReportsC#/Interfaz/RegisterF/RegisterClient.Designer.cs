@@ -38,9 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.direcClient = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.salaryClient = new System.Windows.Forms.NumericUpDown();
-            this.moraClient = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -49,7 +47,6 @@
             this.warranty = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.salaryClient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moraClient)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +58,7 @@
             this.nameClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameClient.Font = new System.Drawing.Font("Segoe UI Variable Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameClient.ForeColor = System.Drawing.SystemColors.Window;
-            this.nameClient.Location = new System.Drawing.Point(37, 171);
+            this.nameClient.Location = new System.Drawing.Point(34, 218);
             this.nameClient.Name = "nameClient";
             this.nameClient.Size = new System.Drawing.Size(235, 20);
             this.nameClient.TabIndex = 1;
@@ -73,7 +70,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(33, 131);
+            this.label2.Location = new System.Drawing.Point(30, 178);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 22);
             this.label2.TabIndex = 2;
@@ -86,7 +83,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(36, 228);
+            this.label3.Location = new System.Drawing.Point(33, 275);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(238, 22);
             this.label3.TabIndex = 4;
@@ -99,7 +96,7 @@
             this.mailClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mailClient.Font = new System.Drawing.Font("Segoe UI Variable Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mailClient.ForeColor = System.Drawing.SystemColors.Window;
-            this.mailClient.Location = new System.Drawing.Point(40, 266);
+            this.mailClient.Location = new System.Drawing.Point(37, 313);
             this.mailClient.Name = "mailClient";
             this.mailClient.Size = new System.Drawing.Size(235, 20);
             this.mailClient.TabIndex = 3;
@@ -111,7 +108,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(335, 133);
+            this.label4.Location = new System.Drawing.Point(332, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(164, 22);
             this.label4.TabIndex = 6;
@@ -124,7 +121,7 @@
             this.phoneClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.phoneClient.Font = new System.Drawing.Font("Segoe UI Variable Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneClient.ForeColor = System.Drawing.SystemColors.Window;
-            this.phoneClient.Location = new System.Drawing.Point(336, 171);
+            this.phoneClient.Location = new System.Drawing.Point(333, 218);
             this.phoneClient.Name = "phoneClient";
             this.phoneClient.Size = new System.Drawing.Size(235, 20);
             this.phoneClient.TabIndex = 5;
@@ -136,7 +133,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(332, 228);
+            this.label5.Location = new System.Drawing.Point(329, 275);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(171, 22);
             this.label5.TabIndex = 8;
@@ -149,7 +146,7 @@
             this.direcClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.direcClient.Font = new System.Drawing.Font("Segoe UI Variable Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.direcClient.ForeColor = System.Drawing.SystemColors.Window;
-            this.direcClient.Location = new System.Drawing.Point(336, 266);
+            this.direcClient.Location = new System.Drawing.Point(333, 313);
             this.direcClient.Name = "direcClient";
             this.direcClient.Size = new System.Drawing.Size(235, 20);
             this.direcClient.TabIndex = 7;
@@ -161,24 +158,11 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(39, 324);
+            this.label6.Location = new System.Drawing.Point(36, 371);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(152, 22);
             this.label6.TabIndex = 10;
             this.label6.Text = "Sueldo del Cliente:";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(36, 431);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(147, 22);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Moras del Cliente:";
             // 
             // salaryClient
             // 
@@ -187,7 +171,7 @@
             this.salaryClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.salaryClient.Font = new System.Drawing.Font("Segoe UI Variable Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salaryClient.ForeColor = System.Drawing.SystemColors.Window;
-            this.salaryClient.Location = new System.Drawing.Point(43, 367);
+            this.salaryClient.Location = new System.Drawing.Point(40, 414);
             this.salaryClient.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -196,18 +180,6 @@
             this.salaryClient.Name = "salaryClient";
             this.salaryClient.Size = new System.Drawing.Size(232, 23);
             this.salaryClient.TabIndex = 13;
-            // 
-            // moraClient
-            // 
-            this.moraClient.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.moraClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(10)))), ((int)(((byte)(127)))));
-            this.moraClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.moraClient.Font = new System.Drawing.Font("Segoe UI Variable Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moraClient.ForeColor = System.Drawing.SystemColors.Window;
-            this.moraClient.Location = new System.Drawing.Point(40, 473);
-            this.moraClient.Name = "moraClient";
-            this.moraClient.Size = new System.Drawing.Size(235, 23);
-            this.moraClient.TabIndex = 14;
             // 
             // panel1
             // 
@@ -249,9 +221,9 @@
             // errMsg
             // 
             this.errMsg.LinkColor = System.Drawing.Color.Red;
-            this.errMsg.Location = new System.Drawing.Point(40, 520);
+            this.errMsg.Location = new System.Drawing.Point(40, 533);
             this.errMsg.Name = "errMsg";
-            this.errMsg.Size = new System.Drawing.Size(528, 36);
+            this.errMsg.Size = new System.Drawing.Size(528, 23);
             this.errMsg.TabIndex = 17;
             this.errMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -262,7 +234,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(332, 324);
+            this.label8.Location = new System.Drawing.Point(329, 371);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(165, 22);
             this.label8.TabIndex = 19;
@@ -270,6 +242,7 @@
             // 
             // warranty
             // 
+            this.warranty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.warranty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(10)))), ((int)(((byte)(127)))));
             this.warranty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.warranty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -320,7 +293,7 @@
             "Garantía de no alteración de producto",
             "Garantía de confiabilidad",
             "Ninguna"});
-            this.warranty.Location = new System.Drawing.Point(336, 367);
+            this.warranty.Location = new System.Drawing.Point(333, 414);
             this.warranty.Name = "warranty";
             this.warranty.Size = new System.Drawing.Size(232, 28);
             this.warranty.TabIndex = 23;
@@ -332,7 +305,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(27, 17);
+            this.label1.Location = new System.Drawing.Point(30, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(410, 57);
             this.label1.TabIndex = 0;
@@ -349,9 +322,7 @@
             this.Controls.Add(this.errMsg);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.moraClient);
             this.Controls.Add(this.salaryClient);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.direcClient);
@@ -366,7 +337,6 @@
             this.Name = "RegisterClient";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.salaryClient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moraClient)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -384,9 +354,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox direcClient;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown salaryClient;
-        private System.Windows.Forms.NumericUpDown moraClient;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
