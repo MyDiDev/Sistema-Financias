@@ -1,4 +1,5 @@
-﻿using ReportsC_.Interfaz.RegisterF;
+﻿using Logica.clases;
+using ReportsC_.Interfaz.RegisterF;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,9 @@ namespace ReportsC_.Interfaz
         {
             InitializeComponent();
         }
+
+        public int UID;
+        public string Correo;
 
         private Form openForm = null;
         private void OpenForm(Form f)
@@ -47,6 +51,12 @@ namespace ReportsC_.Interfaz
         private void button1_Click(object sender, EventArgs e)
         {
             RegisterPrestamos f = new RegisterPrestamos();
+            OpenForm(f);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RegisterAmortizacionForm f = new RegisterAmortizacionForm();            
             OpenForm(f);
         }
     }

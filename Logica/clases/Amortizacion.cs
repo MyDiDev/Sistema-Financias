@@ -1,7 +1,6 @@
 ﻿using Datos.data;
 using System;
 using System.Data;
-using System.Runtime.Remoting.Messaging;
 
 namespace Logica.clases
 {
@@ -9,19 +8,29 @@ namespace Logica.clases
     {
         public int PrestamoId;
         public DateTime FechaPago;
+        public int Mes;
         public decimal MontoAnterior;
         public decimal MontoAbonado;
         public decimal NuevoMonto;
-        public bool Mora;
+        public decimal InteresMora;
+        public int Mora;
 
-        public Amortizacion(int prestamoId, DateTime fechaPago, decimal montoAnterior, decimal montoAbonado, decimal nuevoMonto, bool mora)
+        public Amortizacion(int prestamoId, DateTime fechaPago, int mes, decimal montoAnterior, decimal montoAbonado, decimal nuevoMonto, decimal interesMora, int mora)
         {
             PrestamoId = prestamoId;
             FechaPago = fechaPago;
+            Mes = mes;
             MontoAnterior = montoAnterior;
             MontoAbonado = montoAbonado;
             NuevoMonto = nuevoMonto;
+            InteresMora = interesMora;
             Mora = mora;
+        }
+
+        public Amortizacion(int prestamoId, int mes)
+        {
+            Mes = mes;
+            PrestamoId = prestamoId;
         }
 
         public Amortizacion(int prestamoId)
@@ -29,9 +38,12 @@ namespace Logica.clases
             PrestamoId = prestamoId;
         }
 
-            Data data = new Data();
+        Data data = new Data();
 
-        public bool RealizarAmortizacion(string clientEmail) => data.MakeAm(clientEmail, MontoAnterior, MontoAbonado, NuevoMonto, PrestamoId);
+        public bool RealizarAmortizacion() => data.MakeAm(PrestamoId, Mes, MontoAnterior, MontoAbonado, NuevoMonto, InteresMora, 0);
         public DataTable getAmortizacionData() => data.GetAmData(PrestamoId);
+        public decimal getDeposit() => data.GetDepositValue(PrestamoId);
+        public decimal getLastSalary() => data.GetLastSalary(PrestamoId, Mes);
+        public bool actualizarAmortizacion() => data.UpdateAm(PrestamoId, Mes, MontoAnterior, MontoAbonado, NuevoMonto, InteresMora, Mora);
     }
 }

@@ -146,6 +146,18 @@
     <Compile Include="Interfaz\Login\RegistraForm.Designer.cs">
       <DependentUpon>RegistraForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\RegisterF\AmortizacionTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\RegisterF\AmortizacionTableForm.Designer.cs">
+      <DependentUpon>AmortizacionTableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\RegisterF\RegisterAmortizacionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\RegisterF\RegisterAmortizacionForm.Designer.cs">
+      <DependentUpon>RegisterAmortizacionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\RegisterF\RegisterPrestamos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +225,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Login\RegistraForm.resx">
       <DependentUpon>RegistraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\RegisterF\AmortizacionTableForm.resx">
+      <DependentUpon>AmortizacionTableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\RegisterF\RegisterAmortizacionForm.resx">
+      <DependentUpon>RegisterAmortizacionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\RegisterF\RegisterPrestamos.resx">
       <DependentUpon>RegisterPrestamos.cs</DependentUpon>

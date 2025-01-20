@@ -60,6 +60,7 @@ namespace Logica.clases
         public decimal getSalary() => datos.GetSalary(Correo);
         public bool checkClient() => datos.CheckClient(Nombre, Correo);
         public int getId() => datos.GetClientID(Correo);
+        public bool agregarMora(int mora) => datos.addMora(Id, mora);
 
         //public bool makeLoan() => datos.MakeLoan();
     }

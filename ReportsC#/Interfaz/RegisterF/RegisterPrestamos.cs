@@ -1,5 +1,6 @@
 ﻿using Logica.clases;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -12,6 +13,34 @@ namespace ReportsC_.Interfaz.RegisterF
             InitializeComponent();
         }
 
+        public decimal Salary;
+        public string Correo;
+        public int UID;
+
+        public void CalcFinanzas()
+        {
+            try
+            {
+                Cliente c = new Cliente("", nameClient.Text);
+                Salary = c.getSalary();
+
+                if (Salary == 0)
+                    return;
+             
+                Prestamo p = new Prestamo(0, (int)months.Value);
+                amount.Value = p.CalcularMontoTotal(Salary);
+                interes.Value = (decimal)p.CalcularInteresSalario((double)amount.Value);
+
+                errMsg.LinkColor = Color.LightGreen;
+                errMsg.Text = "Correo Encontrado!, Monto calculado";
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                errMsg.Text = "Correo Invalido!";
+                return;
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(nameClient.Text.Trim()) || amount.Value == 0)
@@ -20,48 +49,43 @@ namespace ReportsC_.Interfaz.RegisterF
                 return;
             }
 
-            Prestamo p = new Prestamo(0, (double)amount.Value, (int)months.Value, 0, DateTime.Now, true);
-            Cliente c = new Cliente(nameClient.Text);
 
-            decimal Salary = c.getSalary();
+            Prestamo p = new Prestamo(UID, (int)months.Value, (double)amount.Value);
 
-            bool prestamoRealizado = p.RealizarPrestamo(nameClient.Text, Salary, amount.Value, 0, 0);
-
-            if (prestamoRealizado)
+            if (p.checkPrestamo())
             {
-                MessageBox.Show("Préstamo Realizado!", "ÉXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("No se pudo realizar el préstamo. Verifique los datos ingresados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ya tiene un prestamo realizado","PRESTAMO YA REALIZADO",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                Close();
+                return;
             }
 
+            AmortizacionTableForm f = new AmortizacionTableForm();
+
+            f.data.AutoGenerateColumns = true;
+            f.Monto = (double)amount.Value;
+            f.fechaPrestamo = DateTime.Now;
+            f.UID = UID; 
+            f.data.DataSource = p.CalcularAmortizacion();
+            f.data.Refresh();
+            f.mode = "calc";
+
+            f.ShowDialog();
+            Close();
         }
 
         private void nameClient_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                Cliente c = new Cliente("", nameClient.Text, "", "", 0, "");
-                decimal salary = c.getSalary();
+            CalcFinanzas();
+        }
 
-                if (salary == 0)
-                {
-                    return;
-                }
-                else {
-                    Prestamo p = new Prestamo(0, (int)months.Value);
-                    amount.Value = p.CalcularMontoTotal(salary);
+        private void RegisterPrestamos_Load(object sender, EventArgs e)
+        {
+            nameClient.Text = Correo;
+        }
 
-                    errMsg.ForeColor = Color.Green;
-                    errMsg.Text = "Correo Encontrado!, Monto calculado";
-                }
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                errMsg.Text = "Correo Invalido!";
-                return;
-            }
+        private void months_ValueChanged(object sender, EventArgs e)
+        {
+            CalcFinanzas();
         }
     }
 }

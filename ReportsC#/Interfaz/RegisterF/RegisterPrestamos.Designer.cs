@@ -39,18 +39,23 @@
             this.label5 = new System.Windows.Forms.Label();
             this.nameClient = new System.Windows.Forms.TextBox();
             this.errMsg = new System.Windows.Forms.LinkLabel();
+            this.interes = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.formPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.months)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.interes)).BeginInit();
+            this.formPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(518, -106);
+            this.pictureBox1.Location = new System.Drawing.Point(537, -106);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(567, 922);
+            this.pictureBox1.Size = new System.Drawing.Size(681, 1022);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -75,7 +80,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(34, 266);
+            this.label2.Location = new System.Drawing.Point(34, 242);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 22);
             this.label2.TabIndex = 4;
@@ -86,9 +91,10 @@
             this.amount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.amount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(10)))), ((int)(((byte)(127)))));
             this.amount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.amount.Enabled = false;
             this.amount.Font = new System.Drawing.Font("Segoe UI Variable Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amount.ForeColor = System.Drawing.SystemColors.Window;
-            this.amount.Location = new System.Drawing.Point(38, 312);
+            this.amount.Location = new System.Drawing.Point(38, 288);
             this.amount.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -107,9 +113,9 @@
             this.months.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.months.Font = new System.Drawing.Font("Segoe UI Variable Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.months.ForeColor = System.Drawing.SystemColors.Window;
-            this.months.Location = new System.Drawing.Point(38, 404);
+            this.months.Location = new System.Drawing.Point(38, 482);
             this.months.Maximum = new decimal(new int[] {
-            12,
+            36,
             0,
             0,
             0});
@@ -126,6 +132,7 @@
             0,
             0,
             0});
+            this.months.ValueChanged += new System.EventHandler(this.months_ValueChanged);
             // 
             // label3
             // 
@@ -134,7 +141,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(34, 368);
+            this.label3.Location = new System.Drawing.Point(34, 446);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 22);
             this.label3.TabIndex = 15;
@@ -142,17 +149,18 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(5)))), ((int)(((byte)(209)))));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(38, 593);
+            this.button1.Location = new System.Drawing.Point(38, 614);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(448, 52);
             this.button1.TabIndex = 19;
-            this.button1.Text = "Registrar";
+            this.button1.Text = "Calcular Amortizaciones";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -163,7 +171,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(34, 172);
+            this.label5.Location = new System.Drawing.Point(34, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(149, 22);
             this.label5.TabIndex = 21;
@@ -176,7 +184,7 @@
             this.nameClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameClient.Font = new System.Drawing.Font("Segoe UI Variable Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameClient.ForeColor = System.Drawing.SystemColors.Window;
-            this.nameClient.Location = new System.Drawing.Point(38, 217);
+            this.nameClient.Location = new System.Drawing.Point(38, 193);
             this.nameClient.Name = "nameClient";
             this.nameClient.Size = new System.Drawing.Size(448, 20);
             this.nameClient.TabIndex = 20;
@@ -184,34 +192,82 @@
             // 
             // errMsg
             // 
+            this.errMsg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.errMsg.LinkColor = System.Drawing.Color.Red;
-            this.errMsg.Location = new System.Drawing.Point(35, 506);
+            this.errMsg.Location = new System.Drawing.Point(35, 542);
             this.errMsg.Name = "errMsg";
             this.errMsg.Size = new System.Drawing.Size(451, 41);
             this.errMsg.TabIndex = 24;
             this.errMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // interes
+            // 
+            this.interes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.interes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(10)))), ((int)(((byte)(127)))));
+            this.interes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.interes.Enabled = false;
+            this.interes.Font = new System.Drawing.Font("Segoe UI Variable Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.interes.ForeColor = System.Drawing.SystemColors.Window;
+            this.interes.Location = new System.Drawing.Point(38, 389);
+            this.interes.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.interes.Name = "interes";
+            this.interes.ReadOnly = true;
+            this.interes.Size = new System.Drawing.Size(448, 23);
+            this.interes.TabIndex = 26;
+            this.interes.ThousandsSeparator = true;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(34, 343);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 22);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Interes:";
+            // 
+            // formPanel
+            // 
+            this.formPanel.Controls.Add(this.button1);
+            this.formPanel.Controls.Add(this.errMsg);
+            this.formPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.formPanel.Location = new System.Drawing.Point(0, 0);
+            this.formPanel.Name = "formPanel";
+            this.formPanel.Size = new System.Drawing.Size(979, 689);
+            this.formPanel.TabIndex = 27;
+            // 
             // RegisterPrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(7)))), ((int)(((byte)(178)))));
             this.ClientSize = new System.Drawing.Size(979, 689);
-            this.Controls.Add(this.errMsg);
+            this.Controls.Add(this.interes);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.nameClient);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.months);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.amount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.formPanel);
             this.Name = "RegisterPrestamos";
             this.Text = "RegisterPrestamos";
+            this.Load += new System.EventHandler(this.RegisterPrestamos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.amount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.months)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.interes)).EndInit();
+            this.formPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +285,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox nameClient;
         private System.Windows.Forms.LinkLabel errMsg;
+        private System.Windows.Forms.NumericUpDown interes;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel formPanel;
     }
 }

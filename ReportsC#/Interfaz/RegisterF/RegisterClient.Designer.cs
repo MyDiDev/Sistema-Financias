@@ -173,13 +173,14 @@
             this.salaryClient.ForeColor = System.Drawing.SystemColors.Window;
             this.salaryClient.Location = new System.Drawing.Point(40, 414);
             this.salaryClient.Maximum = new decimal(new int[] {
-            1410065408,
-            2,
+            1000000,
+            0,
             0,
             0});
             this.salaryClient.Name = "salaryClient";
             this.salaryClient.Size = new System.Drawing.Size(232, 23);
             this.salaryClient.TabIndex = 13;
+            this.salaryClient.ThousandsSeparator = true;
             // 
             // panel1
             // 
@@ -194,9 +195,9 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-63, -106);
+            this.pictureBox1.Location = new System.Drawing.Point(0, -106);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(572, 974);
+            this.pictureBox1.Size = new System.Drawing.Size(509, 974);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -221,9 +222,9 @@
             // errMsg
             // 
             this.errMsg.LinkColor = System.Drawing.Color.Red;
-            this.errMsg.Location = new System.Drawing.Point(40, 533);
+            this.errMsg.Location = new System.Drawing.Point(40, 493);
             this.errMsg.Name = "errMsg";
-            this.errMsg.Size = new System.Drawing.Size(528, 23);
+            this.errMsg.Size = new System.Drawing.Size(528, 38);
             this.errMsg.TabIndex = 17;
             this.errMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -305,7 +306,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(30, 51);
+            this.label1.Location = new System.Drawing.Point(27, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(410, 57);
             this.label1.TabIndex = 0;
@@ -315,7 +316,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(7)))), ((int)(((byte)(178)))));
             this.ClientSize = new System.Drawing.Size(946, 635);
             this.Controls.Add(this.warranty);
             this.Controls.Add(this.label8);

@@ -65,7 +65,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(235, 724);
+            this.panel1.Size = new System.Drawing.Size(229, 724);
             this.panel1.TabIndex = 0;
             // 
             // btnPrestamo
@@ -77,7 +77,7 @@
             this.btnPrestamo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnPrestamo.Location = new System.Drawing.Point(0, 361);
             this.btnPrestamo.Name = "btnPrestamo";
-            this.btnPrestamo.Size = new System.Drawing.Size(235, 74);
+            this.btnPrestamo.Size = new System.Drawing.Size(229, 74);
             this.btnPrestamo.TabIndex = 11;
             this.btnPrestamo.Text = "Realizar Prestamo";
             this.btnPrestamo.UseVisualStyleBackColor = false;
@@ -92,7 +92,7 @@
             this.clientAmInfoBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.clientAmInfoBtn.Location = new System.Drawing.Point(0, 292);
             this.clientAmInfoBtn.Name = "clientAmInfoBtn";
-            this.clientAmInfoBtn.Size = new System.Drawing.Size(235, 74);
+            this.clientAmInfoBtn.Size = new System.Drawing.Size(229, 74);
             this.clientAmInfoBtn.TabIndex = 10;
             this.clientAmInfoBtn.Text = "Amortizaciones";
             this.clientAmInfoBtn.UseVisualStyleBackColor = false;
@@ -107,7 +107,7 @@
             this.clientLoanInfoBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.clientLoanInfoBtn.Location = new System.Drawing.Point(0, 221);
             this.clientLoanInfoBtn.Name = "clientLoanInfoBtn";
-            this.clientLoanInfoBtn.Size = new System.Drawing.Size(235, 74);
+            this.clientLoanInfoBtn.Size = new System.Drawing.Size(229, 74);
             this.clientLoanInfoBtn.TabIndex = 9;
             this.clientLoanInfoBtn.Text = "Prestamos";
             this.clientLoanInfoBtn.UseVisualStyleBackColor = false;
@@ -122,7 +122,7 @@
             this.clientInfoBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.clientInfoBtn.Location = new System.Drawing.Point(0, 151);
             this.clientInfoBtn.Name = "clientInfoBtn";
-            this.clientInfoBtn.Size = new System.Drawing.Size(235, 74);
+            this.clientInfoBtn.Size = new System.Drawing.Size(229, 74);
             this.clientInfoBtn.TabIndex = 8;
             this.clientInfoBtn.Text = "Informacion Personal";
             this.clientInfoBtn.UseVisualStyleBackColor = false;
@@ -130,6 +130,7 @@
             // 
             // isAdmin
             // 
+            this.isAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.isAdmin.AutoSize = true;
             this.isAdmin.BackColor = System.Drawing.Color.Transparent;
             this.isAdmin.Font = new System.Drawing.Font("Gill Sans MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,7 +162,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(12, 42);
+            this.label1.Location = new System.Drawing.Point(12, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 46);
             this.label1.TabIndex = 5;
@@ -185,9 +186,9 @@
             // formPanel
             // 
             this.formPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.formPanel.Location = new System.Drawing.Point(235, 0);
+            this.formPanel.Location = new System.Drawing.Point(229, 0);
             this.formPanel.Name = "formPanel";
-            this.formPanel.Size = new System.Drawing.Size(964, 724);
+            this.formPanel.Size = new System.Drawing.Size(970, 724);
             this.formPanel.TabIndex = 1;
             // 
             // MainForm
@@ -197,6 +198,7 @@
             this.ClientSize = new System.Drawing.Size(1199, 724);
             this.Controls.Add(this.formPanel);
             this.Controls.Add(this.panel1);
+            this.MinimumSize = new System.Drawing.Size(1217, 771);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);

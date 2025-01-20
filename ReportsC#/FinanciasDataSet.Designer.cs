@@ -1929,7 +1929,7 @@ namespace ReportsC_ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Totales_PRow AddTotales_PRow(decimal Total_Prestado, decimal Total_Ganancias_Interes) {
+            public Totales_PRow AddTotales_PRow(string Total_Prestado, string Total_Ganancias_Interes) {
                 Totales_PRow rowTotales_PRow = ((Totales_PRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Total_Prestado,
@@ -1963,12 +1963,14 @@ namespace ReportsC_ {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnTotal_Prestado = new global::System.Data.DataColumn("Total_Prestado", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnTotal_Prestado = new global::System.Data.DataColumn("Total_Prestado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal_Prestado);
-                this.columnTotal_Ganancias_Interes = new global::System.Data.DataColumn("Total_Ganancias_Interes", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnTotal_Ganancias_Interes = new global::System.Data.DataColumn("Total_Ganancias_Interes", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal_Ganancias_Interes);
                 this.columnTotal_Prestado.ReadOnly = true;
+                this.columnTotal_Prestado.MaxLength = 4000;
                 this.columnTotal_Ganancias_Interes.ReadOnly = true;
+                this.columnTotal_Ganancias_Interes.MaxLength = 4000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2888,10 +2890,10 @@ namespace ReportsC_ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal Total_Prestado {
+            public string Total_Prestado {
                 get {
                     try {
-                        return ((decimal)(this[this.tableTotales_P.Total_PrestadoColumn]));
+                        return ((string)(this[this.tableTotales_P.Total_PrestadoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Total_Prestado\' in table \'Totales_P\' is DBNull.", e);
@@ -2904,10 +2906,10 @@ namespace ReportsC_ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal Total_Ganancias_Interes {
+            public string Total_Ganancias_Interes {
                 get {
                     try {
-                        return ((decimal)(this[this.tableTotales_P.Total_Ganancias_InteresColumn]));
+                        return ((string)(this[this.tableTotales_P.Total_Ganancias_InteresColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Total_Ganancias_Interes\' in table \'Totales_P\' is DBNull.", e);
@@ -4771,8 +4773,8 @@ ORDER BY TotalMoras DESC";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT SUM(Monto) AS Total_Prestado, SUM((Monto * (Interes / 100)) * (Meses / 12)" +
-                ") AS Total_Ganancias_Interes\r\nFROM     Prestamos";
+            this._commandCollection[0].CommandText = "SELECT FORMAT(SUM(Monto), \'N2\') AS Total_Prestado, FORMAT(SUM((Monto * (Interes /" +
+                " 100)) * (Meses / 12)), \'N2\') AS Total_Ganancias_Interes\r\nFROM     Prestamos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -26,7 +26,9 @@ namespace ReportsC_.Interfaz.Login
 
             Admins a = new Admins(nameClient.Text, clientMail.Text);
             MainForm f = new MainForm();
-
+            
+            f.Correo = clientMail.Text;
+            f.Nombre = nameClient.Text;
 
             if (a.CheckAdmin())
             {

@@ -10,7 +10,7 @@
     <Shape ID="DesignTable:Clientes" ZOrder="9" X="381" Y="367" Height="273" Width="222" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="28" OldDataTableHeight="0" SplitterPosition="214" />
     <Shape ID="DesignTable:Prestamos" ZOrder="8" X="70" Y="70" Height="250" Width="241" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
     <Shape ID="DesignTable:TotalMoras" ZOrder="5" X="34" Y="407" Height="158" Width="248" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
-    <Shape ID="DesignTable:Totales_P" ZOrder="3" X="776" Y="399" Height="135" Width="248" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
+    <Shape ID="DesignTable:Totales_P" ZOrder="3" X="776" Y="399" Height="135" Width="233" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
     <Shape ID="DesignTable:ClientesMorosos" ZOrder="1" X="827" Y="161" Height="181" Width="285" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="28" OldDataTableHeight="0" SplitterPosition="122" />
   </Shapes>
   <Connectors>

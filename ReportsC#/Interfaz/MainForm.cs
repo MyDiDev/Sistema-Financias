@@ -1,10 +1,8 @@
-﻿using ReportsC_.Interfaz.FReportes;
-using System;
+﻿using System;
 using Logica.clases;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using ReportsC_.Interfaz.Login;
-using ReportsC_.FinanciasDataSetTableAdapters;
 using ReportsC_.Interfaz.ClientData;
 using ReportsC_.Interfaz.RegisterF;
 
@@ -18,6 +16,8 @@ namespace ReportsC_.Interfaz
         }
 
         public int UID;
+        public string Correo;
+        public string Nombre;
 
         private Form openForm = null;
         private void OpenForm(Form f)
@@ -73,6 +73,8 @@ namespace ReportsC_.Interfaz
         private void button2_Click(object sender, EventArgs e)
         {
             RegisterForm f = new RegisterForm();
+            f.Correo = Correo;
+            f.UID = UID;
             OpenForm(f);
         }
 
@@ -101,6 +103,7 @@ namespace ReportsC_.Interfaz
             Prestamo p = new Prestamo(UID);
             CientDataForm f = new CientDataForm();
 
+            f.nameLabel.Text = $"Cliente: {Nombre}";
             f.data.DataSource = p.getLoanData();
             OpenForm(f);
         }
@@ -109,9 +112,12 @@ namespace ReportsC_.Interfaz
         {
             Prestamo p = new Prestamo(UID);
             int prestamoId = p.getLoanId();
+
             Amortizacion a = new Amortizacion(prestamoId);
             CientDataForm f = new CientDataForm();
 
+            f.title.Text = "Amortizaciones";
+            f.nameLabel.Text = $"Cliente: {Nombre}";
             f.data.DataSource = a.getAmortizacionData();
             OpenForm(f);
         }
@@ -119,6 +125,11 @@ namespace ReportsC_.Interfaz
         private void btnPrestamo_Click(object sender, EventArgs e)
         {
             RegisterPrestamos f = new RegisterPrestamos();
+            if (!isAdmin.Visible)
+            {
+                f.Correo = Correo;
+            }
+            f.UID = UID;
             OpenForm(f);
         }
     }
