@@ -21,7 +21,6 @@ Este sistema está desarrollado en **C#** utilizando **WinForms** para una inter
 - [Instalación](#instalación)
 - [Uso](#uso)
 - [Contribución](#contribución)
-- [Licencia](#licencia)
 - [Reconocimientos](#reconocimientos)
 
 ## Instalación
@@ -44,6 +43,37 @@ Para instalar y configurar el sistema en tu entorno local, sigue estos pasos:
 
 4. Compila y ejecuta la aplicación desde Visual Studio:
 
--   En el menú de Visual Studio, selecciona Compilar -> Compilar solución.
--   Luego ejecuta el proyecto con F5 o Ctrl + F5.
--   La aplicación debería abrirse en una ventana de WinForms, lista para usar.
+-    En el menú de Visual Studio, selecciona Compilar -> Compilar solución.
+-    Luego ejecuta el proyecto con F5 o Ctrl + F5.
+-    La aplicación debería abrirse en una ventana de WinForms, lista para usar.
+  
+5. La aplicación debería abrirse en una ventana de WinForms, lista para usar.
+
+### Uso
+Una vez que hayas instalado el sistema, sigue los siguientes pasos para utilizarlo:
+
+**1. Gestión de Clientes:**
+- En la sección "Clientes", puedes agregar nuevos clientes con su nombre, dirección y contacto.
+- Puedes editar o eliminar registros existentes.
+
+**2. Registrar un Préstamo:**
+- Dirígete a la sección "Préstamos" y agrega un nuevo préstamo para un cliente.
+- La aplicacion por si sola Calculara todas la condiciones como(monto, interes, etc...) en base a su cliente.
+
+**3. Amortización:**
+- En la sección "Amortización", puedes ver la tabla de amortización completa del préstamo, incluyendo el deposito y los pagos realizados.
+
+**4. Generar Reportes:**
+- Genera reportes detallados sobre préstamos y clientes para obtener una visión clara de las finanzas.
+
+### Contribución
+¡Las contribuciones son bienvenidas! Si deseas mejorar el sistema o agregar nuevas funcionalidades, sigue estos pasos:
+
+- Haz un fork de este repositorio.
+- Crea una rama para tu nueva característica (```git checkout -b feature-nueva-caracteristica```).
+- Realiza los cambios y haz un commit (```git commit -am 'Agregar nueva característica'```).
+- Sube los cambios (```git push origin feature-nueva-caracteristica```).
+- Crea un pull request describiendo los cambios realizados.
+
+### Reconocimientos:
+- Gracias a los desarrolladores de ```WinForms``` por la plataforma que hace posible esta aplicación.
