@@ -1,4 +1,5 @@
 ﻿using ReportsC_.Interfaz.FReportes;
+using ReportsC_.Interfaz.ReportesF;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,7 +60,8 @@ namespace ReportsC_.Interfaz
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            AmortizacionForm a = new AmortizacionForm();
+            OpenForm(a);
         }
 
         private void listClientBtn2_Click(object sender, EventArgs e)

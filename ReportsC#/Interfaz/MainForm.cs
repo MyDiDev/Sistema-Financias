@@ -118,6 +118,7 @@ namespace ReportsC_.Interfaz
 
             f.title.Text = "Amortizaciones";
             f.nameLabel.Text = $"Cliente: {Nombre}";
+            f.Correo = Correo;
             f.data.DataSource = a.getAmortizacionData();
             OpenForm(f);
         }
@@ -125,6 +126,7 @@ namespace ReportsC_.Interfaz
         private void btnPrestamo_Click(object sender, EventArgs e)
         {
             RegisterPrestamos f = new RegisterPrestamos();
+            f.mode = "client";
             if (!isAdmin.Visible)
             {
                 f.Correo = Correo;

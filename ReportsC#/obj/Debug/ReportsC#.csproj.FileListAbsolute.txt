@@ -119,3 +119,4 @@ C:\Users\Dlsr2\source\repos\ReportsC#\ReportsC#\obj\Debug\ReportsC_.Interfaz.Log
 C:\Users\Dlsr2\source\repos\ReportsC#\ReportsC#\obj\Debug\ReportsC_.Interfaz.ClientData.CientDataForm.resources
 C:\Users\Dlsr2\source\repos\ReportsC#\ReportsC#\obj\Debug\ReportsC_.Interfaz.RegisterF.RegisterAmortizacionForm.resources
 C:\Users\Dlsr2\source\repos\ReportsC#\ReportsC#\obj\Debug\ReportsC_.Interfaz.RegisterF.AmortizacionTableForm.resources
+C:\Users\Dlsr2\source\repos\ReportsC#\ReportsC#\obj\Debug\ReportsC_.Interfaz.ReportesF.AmortizacionForm.resources

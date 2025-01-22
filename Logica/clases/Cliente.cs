@@ -61,6 +61,7 @@ namespace Logica.clases
         public bool checkClient() => datos.CheckClient(Nombre, Correo);
         public int getId() => datos.GetClientID(Correo);
         public bool agregarMora(int mora) => datos.addMora(Id, mora);
+        public List<string> getCorreos() => datos.GetCorreo();
 
         //public bool makeLoan() => datos.MakeLoan();
     }

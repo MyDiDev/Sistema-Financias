@@ -327,7 +327,6 @@ namespace Datos.data
             }
         }
 
-
         public bool addMora(int id, int mora)
         {
             try
@@ -360,6 +359,28 @@ namespace Datos.data
             }catch(SqlException e)
             {
                 throw e;
+            }
+        }
+
+        public List<string> GetCorreo()
+        {
+            List<string> correo = new List<string>();
+
+            using (SqlConnection conn = new SqlConnection(stringConnection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT Correo FROM Clientes;", conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            correo.Add(reader.GetString(0));
+                        }
+
+                        return correo;
+                    }
+                }
             }
         }
 
@@ -542,6 +563,28 @@ namespace Datos.data
             catch (SqlException e)
             {
                 throw e;
+            }
+        }
+
+        public List<string> getAmId()
+        {
+            List<string> id = new List<string>();
+
+            using(SqlConnection conn = new SqlConnection(stringConnection))
+            {
+                conn.Open();
+                using(SqlCommand cmd = new SqlCommand("SELECT IDAmortizacion FROM Amortizaciones",conn))
+                {
+                    using(SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            id.Add(reader.GetInt32(0).ToString());
+                        }
+
+                        return id;
+                    }
+                }
             }
         }
 

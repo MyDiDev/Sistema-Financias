@@ -1,5 +1,6 @@
 ﻿using Datos.data;
 using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace Logica.clases
@@ -45,5 +46,6 @@ namespace Logica.clases
         public decimal getDeposit() => data.GetDepositValue(PrestamoId);
         public decimal getLastSalary() => data.GetLastSalary(PrestamoId, Mes);
         public bool actualizarAmortizacion() => data.UpdateAm(PrestamoId, Mes, MontoAnterior, MontoAbonado, NuevoMonto, InteresMora, Mora);
+        public List<string> getAmortizacionId() => data.getAmId();
     }
 }

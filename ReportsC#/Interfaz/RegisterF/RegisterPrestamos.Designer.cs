@@ -37,11 +37,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.nameClient = new System.Windows.Forms.TextBox();
             this.errMsg = new System.Windows.Forms.LinkLabel();
             this.interes = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.formPanel = new System.Windows.Forms.Panel();
+            this.nameClient = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.months)).BeginInit();
@@ -177,19 +177,6 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "Correo del cliente:";
             // 
-            // nameClient
-            // 
-            this.nameClient.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nameClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(10)))), ((int)(((byte)(127)))));
-            this.nameClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nameClient.Font = new System.Drawing.Font("Segoe UI Variable Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameClient.ForeColor = System.Drawing.SystemColors.Window;
-            this.nameClient.Location = new System.Drawing.Point(38, 193);
-            this.nameClient.Name = "nameClient";
-            this.nameClient.Size = new System.Drawing.Size(448, 20);
-            this.nameClient.TabIndex = 20;
-            this.nameClient.TextChanged += new System.EventHandler(this.nameClient_TextChanged);
-            // 
             // errMsg
             // 
             this.errMsg.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -235,6 +222,7 @@
             // 
             // formPanel
             // 
+            this.formPanel.Controls.Add(this.nameClient);
             this.formPanel.Controls.Add(this.button1);
             this.formPanel.Controls.Add(this.errMsg);
             this.formPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -242,6 +230,20 @@
             this.formPanel.Name = "formPanel";
             this.formPanel.Size = new System.Drawing.Size(979, 689);
             this.formPanel.TabIndex = 27;
+            // 
+            // nameClient
+            // 
+            this.nameClient.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nameClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(10)))), ((int)(((byte)(127)))));
+            this.nameClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.nameClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.nameClient.ForeColor = System.Drawing.Color.White;
+            this.nameClient.FormattingEnabled = true;
+            this.nameClient.Location = new System.Drawing.Point(38, 193);
+            this.nameClient.Name = "nameClient";
+            this.nameClient.Size = new System.Drawing.Size(448, 24);
+            this.nameClient.TabIndex = 29;
+            this.nameClient.SelectedIndexChanged += new System.EventHandler(this.nameClient_SelectedIndexChanged);
             // 
             // RegisterPrestamos
             // 
@@ -252,7 +254,6 @@
             this.Controls.Add(this.interes);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.nameClient);
             this.Controls.Add(this.months);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.amount);
@@ -283,10 +284,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox nameClient;
         private System.Windows.Forms.LinkLabel errMsg;
         private System.Windows.Forms.NumericUpDown interes;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel formPanel;
+        private System.Windows.Forms.ComboBox nameClient;
     }
 }

@@ -1,127 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Dlsr2\\source\\repos\\ReportsC#\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{3EBC61D9-81A7-482C-9620-850C61979202}|Datos2\\Datos2.csproj|c:\\users\\dlsr2\\source\\repos\\reportsc#\\datos2\\data\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EBC61D9-81A7-482C-9620-850C61979202}|Datos2\\Datos2.csproj|solutionrelative:datos2\\data\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABD74EA9-5735-4425-8F6A-06F9F778064D}|ReportsC#\\ReportsC#.csproj|c:\\users\\dlsr2\\source\\repos\\reportsc#\\reportsc#\\interfaz\\registerf\\registeramortizacionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABD74EA9-5735-4425-8F6A-06F9F778064D}|ReportsC#\\ReportsC#.csproj|solutionrelative:reportsc#\\interfaz\\registerf\\registeramortizacionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABD74EA9-5735-4425-8F6A-06F9F778064D}|ReportsC#\\ReportsC#.csproj|c:\\users\\dlsr2\\source\\repos\\reportsc#\\reportsc#\\interfaz\\registerf\\registerprestamos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABD74EA9-5735-4425-8F6A-06F9F778064D}|ReportsC#\\ReportsC#.csproj|solutionrelative:reportsc#\\interfaz\\registerf\\registerprestamos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABD74EA9-5735-4425-8F6A-06F9F778064D}|ReportsC#\\ReportsC#.csproj|c:\\users\\dlsr2\\source\\repos\\reportsc#\\reportsc#\\interfaz\\registerf\\amortizaciontableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABD74EA9-5735-4425-8F6A-06F9F778064D}|ReportsC#\\ReportsC#.csproj|solutionrelative:reportsc#\\interfaz\\registerf\\amortizaciontableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27E4DF82-B7B1-49C2-B090-F601CBCA424D}|Logica\\Logica.csproj|c:\\users\\dlsr2\\source\\repos\\reportsc#\\logica\\clases\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27E4DF82-B7B1-49C2-B090-F601CBCA424D}|Logica\\Logica.csproj|solutionrelative:logica\\clases\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27E4DF82-B7B1-49C2-B090-F601CBCA424D}|Logica\\Logica.csproj|c:\\users\\dlsr2\\source\\repos\\reportsc#\\logica\\clases\\amortizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27E4DF82-B7B1-49C2-B090-F601CBCA424D}|Logica\\Logica.csproj|solutionrelative:logica\\clases\\amortizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 216,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 205,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Amortizacion.cs",
-              "DocumentMoniker": "C:\\Users\\Dlsr2\\source\\repos\\ReportsC#\\Logica\\clases\\Amortizacion.cs",
-              "RelativeDocumentMoniker": "Logica\\clases\\Amortizacion.cs",
-              "ToolTip": "C:\\Users\\Dlsr2\\source\\repos\\ReportsC#\\Logica\\clases\\Amortizacion.cs",
-              "RelativeToolTip": "Logica\\clases\\Amortizacion.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAIwC4AAACLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T23:29:13.712Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Data.cs",
-              "DocumentMoniker": "C:\\Users\\Dlsr2\\source\\repos\\ReportsC#\\Datos2\\data\\Data.cs",
-              "RelativeDocumentMoniker": "Datos2\\data\\Data.cs",
-              "ToolTip": "C:\\Users\\Dlsr2\\source\\repos\\ReportsC#\\Datos2\\data\\Data.cs",
-              "RelativeToolTip": "Datos2\\data\\Data.cs",
-              "ViewState": "AgIAAFABAAAAAAAAAIA0wFIBAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T23:22:05.32Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RegisterAmortizacionForm.cs",
-              "DocumentMoniker": "C:\\Users\\Dlsr2\\source\\repos\\ReportsC#\\ReportsC#\\Interfaz\\RegisterF\\RegisterAmortizacionForm.cs",
-              "RelativeDocumentMoniker": "ReportsC#\\Interfaz\\RegisterF\\RegisterAmortizacionForm.cs",
-              "ToolTip": "C:\\Users\\Dlsr2\\source\\repos\\ReportsC#\\ReportsC#\\Interfaz\\RegisterF\\RegisterAmortizacionForm.cs",
-              "RelativeToolTip": "ReportsC#\\Interfaz\\RegisterF\\RegisterAmortizacionForm.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAswB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T23:21:42.081Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RegisterPrestamos.cs",
-              "DocumentMoniker": "C:\\Users\\Dlsr2\\source\\repos\\ReportsC#\\ReportsC#\\Interfaz\\RegisterF\\RegisterPrestamos.cs",
-              "RelativeDocumentMoniker": "ReportsC#\\Interfaz\\RegisterF\\RegisterPrestamos.cs",
-              "ToolTip": "C:\\Users\\Dlsr2\\source\\repos\\ReportsC#\\ReportsC#\\Interfaz\\RegisterF\\RegisterPrestamos.cs",
-              "RelativeToolTip": "ReportsC#\\Interfaz\\RegisterF\\RegisterPrestamos.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAowFsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T23:21:33.747Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\Dlsr2\\source\\repos\\ReportsC#\\Logica\\clases\\Cliente.cs",
-              "RelativeDocumentMoniker": "Logica\\clases\\Cliente.cs",
-              "ToolTip": "C:\\Users\\Dlsr2\\source\\repos\\ReportsC#\\Logica\\clases\\Cliente.cs",
-              "RelativeToolTip": "Logica\\clases\\Cliente.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAABCwD4AAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T23:21:06.976Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AmortizacionTableForm.cs",
-              "DocumentMoniker": "C:\\Users\\Dlsr2\\source\\repos\\ReportsC#\\ReportsC#\\Interfaz\\RegisterF\\AmortizacionTableForm.cs",
-              "RelativeDocumentMoniker": "ReportsC#\\Interfaz\\RegisterF\\AmortizacionTableForm.cs",
-              "ToolTip": "C:\\Users\\Dlsr2\\source\\repos\\ReportsC#\\ReportsC#\\Interfaz\\RegisterF\\AmortizacionTableForm.cs",
-              "RelativeToolTip": "ReportsC#\\Interfaz\\RegisterF\\AmortizacionTableForm.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAIA0wD8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T23:20:38.778Z",
-              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 184,
+          "DockedWidth": 227,
           "SelectedChildIndex": -1,
           "Children": [
             {

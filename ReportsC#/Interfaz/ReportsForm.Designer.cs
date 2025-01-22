@@ -96,7 +96,7 @@
             this.clientListM.Name = "clientListM";
             this.clientListM.Size = new System.Drawing.Size(235, 74);
             this.clientListM.TabIndex = 9;
-            this.clientListM.Text = "Clientes por Mora";
+            this.clientListM.Text = "Clientes Morosos";
             this.clientListM.UseVisualStyleBackColor = false;
             this.clientListM.Click += new System.EventHandler(this.clientListM_Click);
             // 
@@ -112,7 +112,7 @@
             this.listClientBtn2.Name = "listClientBtn2";
             this.listClientBtn2.Size = new System.Drawing.Size(235, 74);
             this.listClientBtn2.TabIndex = 10;
-            this.listClientBtn2.Text = "Clientes Morosos";
+            this.listClientBtn2.Text = "Clientes por Mora";
             this.listClientBtn2.UseVisualStyleBackColor = false;
             this.listClientBtn2.Click += new System.EventHandler(this.listClientBtn2_Click);
             // 

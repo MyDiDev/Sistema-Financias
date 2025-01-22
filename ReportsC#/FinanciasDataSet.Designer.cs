@@ -36,6 +36,8 @@ namespace ReportsC_ {
         
         private ClientesMorososDataTable tableClientesMorosos;
         
+        private AmortiacionesFiltroIdDataTable tableAmortiacionesFiltroId;
+        
         private global::System.Data.DataRelation relationFK_Amortizaciones_Prestamos;
         
         private global::System.Data.DataRelation relationFK_Prestamos_Clientes;
@@ -43,6 +45,8 @@ namespace ReportsC_ {
         private global::System.Data.DataRelation relationFK_Prestamos_Clientes1;
         
         private global::System.Data.DataRelation relationFK_Prestamos_Clientes2;
+        
+        private global::System.Data.DataRelation relationFK_Amortizaciones_Prestamos1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -89,6 +93,9 @@ namespace ReportsC_ {
                 }
                 if ((ds.Tables["ClientesMorosos"] != null)) {
                     base.Tables.Add(new ClientesMorososDataTable(ds.Tables["ClientesMorosos"]));
+                }
+                if ((ds.Tables["AmortiacionesFiltroId"] != null)) {
+                    base.Tables.Add(new AmortiacionesFiltroIdDataTable(ds.Tables["AmortiacionesFiltroId"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -165,6 +172,16 @@ namespace ReportsC_ {
         public ClientesMorososDataTable ClientesMorosos {
             get {
                 return this.tableClientesMorosos;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public AmortiacionesFiltroIdDataTable AmortiacionesFiltroId {
+            get {
+                return this.tableAmortiacionesFiltroId;
             }
         }
         
@@ -253,6 +270,9 @@ namespace ReportsC_ {
                 if ((ds.Tables["ClientesMorosos"] != null)) {
                     base.Tables.Add(new ClientesMorososDataTable(ds.Tables["ClientesMorosos"]));
                 }
+                if ((ds.Tables["AmortiacionesFiltroId"] != null)) {
+                    base.Tables.Add(new AmortiacionesFiltroIdDataTable(ds.Tables["AmortiacionesFiltroId"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -322,10 +342,17 @@ namespace ReportsC_ {
                     this.tableClientesMorosos.InitVars();
                 }
             }
+            this.tableAmortiacionesFiltroId = ((AmortiacionesFiltroIdDataTable)(base.Tables["AmortiacionesFiltroId"]));
+            if ((initTable == true)) {
+                if ((this.tableAmortiacionesFiltroId != null)) {
+                    this.tableAmortiacionesFiltroId.InitVars();
+                }
+            }
             this.relationFK_Amortizaciones_Prestamos = this.Relations["FK_Amortizaciones_Prestamos"];
             this.relationFK_Prestamos_Clientes = this.Relations["FK_Prestamos_Clientes"];
             this.relationFK_Prestamos_Clientes1 = this.Relations["FK_Prestamos_Clientes1"];
             this.relationFK_Prestamos_Clientes2 = this.Relations["FK_Prestamos_Clientes2"];
+            this.relationFK_Amortizaciones_Prestamos1 = this.Relations["FK_Amortizaciones_Prestamos1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -348,6 +375,8 @@ namespace ReportsC_ {
             base.Tables.Add(this.tableTotales_P);
             this.tableClientesMorosos = new ClientesMorososDataTable();
             base.Tables.Add(this.tableClientesMorosos);
+            this.tableAmortiacionesFiltroId = new AmortiacionesFiltroIdDataTable();
+            base.Tables.Add(this.tableAmortiacionesFiltroId);
             this.relationFK_Amortizaciones_Prestamos = new global::System.Data.DataRelation("FK_Amortizaciones_Prestamos", new global::System.Data.DataColumn[] {
                         this.tablePrestamos.IDPrestamoColumn}, new global::System.Data.DataColumn[] {
                         this.tableAmortizaciones.IDPrestamoColumn}, false);
@@ -364,6 +393,10 @@ namespace ReportsC_ {
                         this.tableClientesMorosos.IDClienteColumn}, new global::System.Data.DataColumn[] {
                         this.tablePrestamos.IDClienteColumn}, false);
             this.Relations.Add(this.relationFK_Prestamos_Clientes2);
+            this.relationFK_Amortizaciones_Prestamos1 = new global::System.Data.DataRelation("FK_Amortizaciones_Prestamos1", new global::System.Data.DataColumn[] {
+                        this.tablePrestamos.IDPrestamoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAmortiacionesFiltroId.IDPrestamoColumn}, false);
+            this.Relations.Add(this.relationFK_Amortizaciones_Prestamos1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -399,6 +432,12 @@ namespace ReportsC_ {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeClientesMorosos() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeAmortiacionesFiltroId() {
             return false;
         }
         
@@ -474,6 +513,9 @@ namespace ReportsC_ {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void ClientesMorososRowChangeEventHandler(object sender, ClientesMorososRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void AmortiacionesFiltroIdRowChangeEventHandler(object sender, AmortiacionesFiltroIdRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2406,6 +2448,376 @@ namespace ReportsC_ {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class AmortiacionesFiltroIdDataTable : global::System.Data.TypedTableBase<AmortiacionesFiltroIdRow> {
+            
+            private global::System.Data.DataColumn columnIDAmortizacion;
+            
+            private global::System.Data.DataColumn columnIDPrestamo;
+            
+            private global::System.Data.DataColumn columnMes;
+            
+            private global::System.Data.DataColumn columnMontoAnterior;
+            
+            private global::System.Data.DataColumn columnMontoAbonado;
+            
+            private global::System.Data.DataColumn columnNuevoMonto;
+            
+            private global::System.Data.DataColumn columnInteresMora;
+            
+            private global::System.Data.DataColumn columnMora;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AmortiacionesFiltroIdDataTable() {
+                this.TableName = "AmortiacionesFiltroId";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal AmortiacionesFiltroIdDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected AmortiacionesFiltroIdDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IDAmortizacionColumn {
+                get {
+                    return this.columnIDAmortizacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IDPrestamoColumn {
+                get {
+                    return this.columnIDPrestamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MesColumn {
+                get {
+                    return this.columnMes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MontoAnteriorColumn {
+                get {
+                    return this.columnMontoAnterior;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MontoAbonadoColumn {
+                get {
+                    return this.columnMontoAbonado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NuevoMontoColumn {
+                get {
+                    return this.columnNuevoMonto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn InteresMoraColumn {
+                get {
+                    return this.columnInteresMora;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MoraColumn {
+                get {
+                    return this.columnMora;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AmortiacionesFiltroIdRow this[int index] {
+                get {
+                    return ((AmortiacionesFiltroIdRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AmortiacionesFiltroIdRowChangeEventHandler AmortiacionesFiltroIdRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AmortiacionesFiltroIdRowChangeEventHandler AmortiacionesFiltroIdRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AmortiacionesFiltroIdRowChangeEventHandler AmortiacionesFiltroIdRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AmortiacionesFiltroIdRowChangeEventHandler AmortiacionesFiltroIdRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddAmortiacionesFiltroIdRow(AmortiacionesFiltroIdRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AmortiacionesFiltroIdRow AddAmortiacionesFiltroIdRow(PrestamosRow parentPrestamosRowByFK_Amortizaciones_Prestamos1, int Mes, decimal MontoAnterior, decimal MontoAbonado, decimal NuevoMonto, decimal InteresMora, int Mora) {
+                AmortiacionesFiltroIdRow rowAmortiacionesFiltroIdRow = ((AmortiacionesFiltroIdRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        Mes,
+                        MontoAnterior,
+                        MontoAbonado,
+                        NuevoMonto,
+                        InteresMora,
+                        Mora};
+                if ((parentPrestamosRowByFK_Amortizaciones_Prestamos1 != null)) {
+                    columnValuesArray[1] = parentPrestamosRowByFK_Amortizaciones_Prestamos1[0];
+                }
+                rowAmortiacionesFiltroIdRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAmortiacionesFiltroIdRow);
+                return rowAmortiacionesFiltroIdRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AmortiacionesFiltroIdRow FindByIDAmortizacion(int IDAmortizacion) {
+                return ((AmortiacionesFiltroIdRow)(this.Rows.Find(new object[] {
+                            IDAmortizacion})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AmortiacionesFiltroIdDataTable cln = ((AmortiacionesFiltroIdDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AmortiacionesFiltroIdDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnIDAmortizacion = base.Columns["IDAmortizacion"];
+                this.columnIDPrestamo = base.Columns["IDPrestamo"];
+                this.columnMes = base.Columns["Mes"];
+                this.columnMontoAnterior = base.Columns["MontoAnterior"];
+                this.columnMontoAbonado = base.Columns["MontoAbonado"];
+                this.columnNuevoMonto = base.Columns["NuevoMonto"];
+                this.columnInteresMora = base.Columns["InteresMora"];
+                this.columnMora = base.Columns["Mora"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnIDAmortizacion = new global::System.Data.DataColumn("IDAmortizacion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDAmortizacion);
+                this.columnIDPrestamo = new global::System.Data.DataColumn("IDPrestamo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDPrestamo);
+                this.columnMes = new global::System.Data.DataColumn("Mes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMes);
+                this.columnMontoAnterior = new global::System.Data.DataColumn("MontoAnterior", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMontoAnterior);
+                this.columnMontoAbonado = new global::System.Data.DataColumn("MontoAbonado", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMontoAbonado);
+                this.columnNuevoMonto = new global::System.Data.DataColumn("NuevoMonto", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNuevoMonto);
+                this.columnInteresMora = new global::System.Data.DataColumn("InteresMora", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInteresMora);
+                this.columnMora = new global::System.Data.DataColumn("Mora", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMora);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnIDAmortizacion}, true));
+                this.columnIDAmortizacion.AutoIncrement = true;
+                this.columnIDAmortizacion.AutoIncrementSeed = -1;
+                this.columnIDAmortizacion.AutoIncrementStep = -1;
+                this.columnIDAmortizacion.AllowDBNull = false;
+                this.columnIDAmortizacion.ReadOnly = true;
+                this.columnIDAmortizacion.Unique = true;
+                this.columnIDPrestamo.AllowDBNull = false;
+                this.columnMes.AllowDBNull = false;
+                this.columnMontoAnterior.AllowDBNull = false;
+                this.columnMontoAbonado.AllowDBNull = false;
+                this.columnNuevoMonto.AllowDBNull = false;
+                this.columnInteresMora.AllowDBNull = false;
+                this.columnMora.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AmortiacionesFiltroIdRow NewAmortiacionesFiltroIdRow() {
+                return ((AmortiacionesFiltroIdRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AmortiacionesFiltroIdRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AmortiacionesFiltroIdRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AmortiacionesFiltroIdRowChanged != null)) {
+                    this.AmortiacionesFiltroIdRowChanged(this, new AmortiacionesFiltroIdRowChangeEvent(((AmortiacionesFiltroIdRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AmortiacionesFiltroIdRowChanging != null)) {
+                    this.AmortiacionesFiltroIdRowChanging(this, new AmortiacionesFiltroIdRowChangeEvent(((AmortiacionesFiltroIdRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AmortiacionesFiltroIdRowDeleted != null)) {
+                    this.AmortiacionesFiltroIdRowDeleted(this, new AmortiacionesFiltroIdRowChangeEvent(((AmortiacionesFiltroIdRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AmortiacionesFiltroIdRowDeleting != null)) {
+                    this.AmortiacionesFiltroIdRowDeleting(this, new AmortiacionesFiltroIdRowChangeEvent(((AmortiacionesFiltroIdRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveAmortiacionesFiltroIdRow(AmortiacionesFiltroIdRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                FinanciasDataSet ds = new FinanciasDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AmortiacionesFiltroIdDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class AmortizacionesRow : global::System.Data.DataRow {
@@ -2796,6 +3208,17 @@ namespace ReportsC_ {
                     return ((AmortizacionesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Amortizaciones_Prestamos"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AmortiacionesFiltroIdRow[] GetAmortiacionesFiltroIdRows() {
+                if ((this.Table.ChildRelations["FK_Amortizaciones_Prestamos1"] == null)) {
+                    return new AmortiacionesFiltroIdRow[0];
+                }
+                else {
+                    return ((AmortiacionesFiltroIdRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Amortizaciones_Prestamos1"])));
+                }
+            }
         }
         
         /// <summary>
@@ -3033,6 +3456,120 @@ namespace ReportsC_ {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class AmortiacionesFiltroIdRow : global::System.Data.DataRow {
+            
+            private AmortiacionesFiltroIdDataTable tableAmortiacionesFiltroId;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal AmortiacionesFiltroIdRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAmortiacionesFiltroId = ((AmortiacionesFiltroIdDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int IDAmortizacion {
+                get {
+                    return ((int)(this[this.tableAmortiacionesFiltroId.IDAmortizacionColumn]));
+                }
+                set {
+                    this[this.tableAmortiacionesFiltroId.IDAmortizacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int IDPrestamo {
+                get {
+                    return ((int)(this[this.tableAmortiacionesFiltroId.IDPrestamoColumn]));
+                }
+                set {
+                    this[this.tableAmortiacionesFiltroId.IDPrestamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Mes {
+                get {
+                    return ((int)(this[this.tableAmortiacionesFiltroId.MesColumn]));
+                }
+                set {
+                    this[this.tableAmortiacionesFiltroId.MesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal MontoAnterior {
+                get {
+                    return ((decimal)(this[this.tableAmortiacionesFiltroId.MontoAnteriorColumn]));
+                }
+                set {
+                    this[this.tableAmortiacionesFiltroId.MontoAnteriorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal MontoAbonado {
+                get {
+                    return ((decimal)(this[this.tableAmortiacionesFiltroId.MontoAbonadoColumn]));
+                }
+                set {
+                    this[this.tableAmortiacionesFiltroId.MontoAbonadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal NuevoMonto {
+                get {
+                    return ((decimal)(this[this.tableAmortiacionesFiltroId.NuevoMontoColumn]));
+                }
+                set {
+                    this[this.tableAmortiacionesFiltroId.NuevoMontoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal InteresMora {
+                get {
+                    return ((decimal)(this[this.tableAmortiacionesFiltroId.InteresMoraColumn]));
+                }
+                set {
+                    this[this.tableAmortiacionesFiltroId.InteresMoraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Mora {
+                get {
+                    return ((int)(this[this.tableAmortiacionesFiltroId.MoraColumn]));
+                }
+                set {
+                    this[this.tableAmortiacionesFiltroId.MoraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public PrestamosRow PrestamosRow {
+                get {
+                    return ((PrestamosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Amortizaciones_Prestamos1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Amortizaciones_Prestamos1"]);
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -3222,6 +3759,40 @@ namespace ReportsC_ {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ClientesMorososRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class AmortiacionesFiltroIdRowChangeEvent : global::System.EventArgs {
+            
+            private AmortiacionesFiltroIdRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AmortiacionesFiltroIdRowChangeEvent(AmortiacionesFiltroIdRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AmortiacionesFiltroIdRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4773,8 +5344,8 @@ ORDER BY TotalMoras DESC";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT FORMAT(SUM(Monto), \'N2\') AS Total_Prestado, FORMAT(SUM((Monto * (Interes /" +
-                " 100)) * (Meses / 12)), \'N2\') AS Total_Ganancias_Interes\r\nFROM     Prestamos";
+            this._commandCollection[0].CommandText = "SELECT FORMAT(SUM(Monto), \'N2\') AS Total_Prestado, FORMAT(SUM(Monto * Interes), \'" +
+                "N2\') AS Total_Ganancias_Interes\r\nFROM   Prestamos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5139,6 +5710,376 @@ SELECT IDCliente, Nombre, Correo, Moras FROM Clientes WHERE (IDCliente = @IDClie
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class AmortiacionesFiltroIdTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public AmortiacionesFiltroIdTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "AmortiacionesFiltroId";
+            tableMapping.ColumnMappings.Add("IDAmortizacion", "IDAmortizacion");
+            tableMapping.ColumnMappings.Add("IDPrestamo", "IDPrestamo");
+            tableMapping.ColumnMappings.Add("Mes", "Mes");
+            tableMapping.ColumnMappings.Add("MontoAnterior", "MontoAnterior");
+            tableMapping.ColumnMappings.Add("MontoAbonado", "MontoAbonado");
+            tableMapping.ColumnMappings.Add("NuevoMonto", "NuevoMonto");
+            tableMapping.ColumnMappings.Add("InteresMora", "InteresMora");
+            tableMapping.ColumnMappings.Add("Mora", "Mora");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Amortizaciones] WHERE (([IDAmortizacion] = @Original_IDAmortizacion) AND ([IDPrestamo] = @Original_IDPrestamo) AND ([Mes] = @Original_Mes) AND ([MontoAnterior] = @Original_MontoAnterior) AND ([MontoAbonado] = @Original_MontoAbonado) AND ([NuevoMonto] = @Original_NuevoMonto) AND ([InteresMora] = @Original_InteresMora) AND ([Mora] = @Original_Mora))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDAmortizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDAmortizacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDPrestamo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDPrestamo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MontoAnterior", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "MontoAnterior", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MontoAbonado", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "MontoAbonado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NuevoMonto", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "NuevoMonto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_InteresMora", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "InteresMora", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mora", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mora", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Amortizaciones] ([IDPrestamo], [Mes], [MontoAnterior], [MontoAbonado], [NuevoMonto], [InteresMora], [Mora]) VALUES (@IDPrestamo, @Mes, @MontoAnterior, @MontoAbonado, @NuevoMonto, @InteresMora, @Mora);
+SELECT IDAmortizacion, IDPrestamo, Mes, MontoAnterior, MontoAbonado, NuevoMonto, InteresMora, Mora FROM Amortizaciones WHERE (IDAmortizacion = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDPrestamo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDPrestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MontoAnterior", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "MontoAnterior", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MontoAbonado", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "MontoAbonado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NuevoMonto", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "NuevoMonto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InteresMora", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "InteresMora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mora", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Amortizaciones] SET [IDPrestamo] = @IDPrestamo, [Mes] = @Mes, [MontoAnterior] = @MontoAnterior, [MontoAbonado] = @MontoAbonado, [NuevoMonto] = @NuevoMonto, [InteresMora] = @InteresMora, [Mora] = @Mora WHERE (([IDAmortizacion] = @Original_IDAmortizacion) AND ([IDPrestamo] = @Original_IDPrestamo) AND ([Mes] = @Original_Mes) AND ([MontoAnterior] = @Original_MontoAnterior) AND ([MontoAbonado] = @Original_MontoAbonado) AND ([NuevoMonto] = @Original_NuevoMonto) AND ([InteresMora] = @Original_InteresMora) AND ([Mora] = @Original_Mora));
+SELECT IDAmortizacion, IDPrestamo, Mes, MontoAnterior, MontoAbonado, NuevoMonto, InteresMora, Mora FROM Amortizaciones WHERE (IDAmortizacion = @IDAmortizacion)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDPrestamo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDPrestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MontoAnterior", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "MontoAnterior", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MontoAbonado", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "MontoAbonado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NuevoMonto", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "NuevoMonto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InteresMora", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "InteresMora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mora", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDAmortizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDAmortizacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDPrestamo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDPrestamo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MontoAnterior", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "MontoAnterior", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MontoAbonado", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "MontoAbonado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NuevoMonto", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "NuevoMonto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_InteresMora", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "InteresMora", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mora", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mora", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDAmortizacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDAmortizacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ReportsC_.Properties.Settings.Default.FinanciasConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT IDAmortizacion, IDPrestamo, Mes, MontoAnterior, MontoAbonado, NuevoMonto, " +
+                "InteresMora, Mora\r\nFROM   Amortizaciones\r\nWHERE (IDPrestamo = @id);";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDPrestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(FinanciasDataSet.AmortiacionesFiltroIdDataTable dataTable, int id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual FinanciasDataSet.AmortiacionesFiltroIdDataTable GetData(int id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
+            FinanciasDataSet.AmortiacionesFiltroIdDataTable dataTable = new FinanciasDataSet.AmortiacionesFiltroIdDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(FinanciasDataSet.AmortiacionesFiltroIdDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(FinanciasDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "AmortiacionesFiltroId");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_IDAmortizacion, int Original_IDPrestamo, int Original_Mes, decimal Original_MontoAnterior, decimal Original_MontoAbonado, decimal Original_NuevoMonto, decimal Original_InteresMora, int Original_Mora) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IDAmortizacion));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_IDPrestamo));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Mes));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_MontoAnterior));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_MontoAbonado));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_NuevoMonto));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_InteresMora));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_Mora));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int IDPrestamo, int Mes, decimal MontoAnterior, decimal MontoAbonado, decimal NuevoMonto, decimal InteresMora, int Mora) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IDPrestamo));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Mes));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(MontoAnterior));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(MontoAbonado));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(NuevoMonto));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(InteresMora));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Mora));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    int IDPrestamo, 
+                    int Mes, 
+                    decimal MontoAnterior, 
+                    decimal MontoAbonado, 
+                    decimal NuevoMonto, 
+                    decimal InteresMora, 
+                    int Mora, 
+                    int Original_IDAmortizacion, 
+                    int Original_IDPrestamo, 
+                    int Original_Mes, 
+                    decimal Original_MontoAnterior, 
+                    decimal Original_MontoAbonado, 
+                    decimal Original_NuevoMonto, 
+                    decimal Original_InteresMora, 
+                    int Original_Mora, 
+                    int IDAmortizacion) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(IDPrestamo));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Mes));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(MontoAnterior));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(MontoAbonado));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(NuevoMonto));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(InteresMora));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Mora));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_IDAmortizacion));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_IDPrestamo));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Mes));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_MontoAnterior));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_MontoAbonado));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_NuevoMonto));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_InteresMora));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Mora));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(IDAmortizacion));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int IDPrestamo, int Mes, decimal MontoAnterior, decimal MontoAbonado, decimal NuevoMonto, decimal InteresMora, int Mora, int Original_IDAmortizacion, int Original_IDPrestamo, int Original_Mes, decimal Original_MontoAnterior, decimal Original_MontoAbonado, decimal Original_NuevoMonto, decimal Original_InteresMora, int Original_Mora) {
+            return this.Update(IDPrestamo, Mes, MontoAnterior, MontoAbonado, NuevoMonto, InteresMora, Mora, Original_IDAmortizacion, Original_IDPrestamo, Original_Mes, Original_MontoAnterior, Original_MontoAbonado, Original_NuevoMonto, Original_InteresMora, Original_Mora, Original_IDAmortizacion);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5157,6 +6098,8 @@ SELECT IDCliente, Nombre, Correo, Moras FROM Clientes WHERE (IDCliente = @IDClie
         private PrestamosTableAdapter _prestamosTableAdapter;
         
         private ClientesMorososTableAdapter _clientesMorososTableAdapter;
+        
+        private AmortiacionesFiltroIdTableAdapter _amortiacionesFiltroIdTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -5231,6 +6174,20 @@ SELECT IDCliente, Nombre, Correo, Moras FROM Clientes WHERE (IDCliente = @IDClie
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public AmortiacionesFiltroIdTableAdapter AmortiacionesFiltroIdTableAdapter {
+            get {
+                return this._amortiacionesFiltroIdTableAdapter;
+            }
+            set {
+                this._amortiacionesFiltroIdTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -5264,6 +6221,10 @@ SELECT IDCliente, Nombre, Correo, Moras FROM Clientes WHERE (IDCliente = @IDClie
                             && (this._clientesMorososTableAdapter.Connection != null))) {
                     return this._clientesMorososTableAdapter.Connection;
                 }
+                if (((this._amortiacionesFiltroIdTableAdapter != null) 
+                            && (this._amortiacionesFiltroIdTableAdapter.Connection != null))) {
+                    return this._amortiacionesFiltroIdTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -5287,6 +6248,9 @@ SELECT IDCliente, Nombre, Correo, Moras FROM Clientes WHERE (IDCliente = @IDClie
                     count = (count + 1);
                 }
                 if ((this._clientesMorososTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._amortiacionesFiltroIdTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -5336,6 +6300,15 @@ SELECT IDCliente, Nombre, Correo, Moras FROM Clientes WHERE (IDCliente = @IDClie
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._amortiacionesFiltroIdTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AmortiacionesFiltroId.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._amortiacionesFiltroIdTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -5378,6 +6351,14 @@ SELECT IDCliente, Nombre, Correo, Moras FROM Clientes WHERE (IDCliente = @IDClie
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._amortiacionesFiltroIdTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AmortiacionesFiltroId.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._amortiacionesFiltroIdTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -5388,6 +6369,14 @@ SELECT IDCliente, Nombre, Correo, Moras FROM Clientes WHERE (IDCliente = @IDClie
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(FinanciasDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._amortiacionesFiltroIdTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AmortiacionesFiltroId.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._amortiacionesFiltroIdTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._amortizacionesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Amortizaciones.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -5479,6 +6468,11 @@ SELECT IDCliente, Nombre, Correo, Moras FROM Clientes WHERE (IDCliente = @IDClie
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._amortiacionesFiltroIdTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._amortiacionesFiltroIdTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -5545,6 +6539,15 @@ SELECT IDCliente, Nombre, Correo, Moras FROM Clientes WHERE (IDCliente = @IDClie
                     if (this._clientesMorososTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._clientesMorososTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._clientesMorososTableAdapter.Adapter);
+                    }
+                }
+                if ((this._amortiacionesFiltroIdTableAdapter != null)) {
+                    revertConnections.Add(this._amortiacionesFiltroIdTableAdapter, this._amortiacionesFiltroIdTableAdapter.Connection);
+                    this._amortiacionesFiltroIdTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._amortiacionesFiltroIdTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._amortiacionesFiltroIdTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._amortiacionesFiltroIdTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._amortiacionesFiltroIdTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -5620,6 +6623,10 @@ SELECT IDCliente, Nombre, Correo, Moras FROM Clientes WHERE (IDCliente = @IDClie
                 if ((this._clientesMorososTableAdapter != null)) {
                     this._clientesMorososTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._clientesMorososTableAdapter]));
                     this._clientesMorososTableAdapter.Transaction = null;
+                }
+                if ((this._amortiacionesFiltroIdTableAdapter != null)) {
+                    this._amortiacionesFiltroIdTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._amortiacionesFiltroIdTableAdapter]));
+                    this._amortiacionesFiltroIdTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

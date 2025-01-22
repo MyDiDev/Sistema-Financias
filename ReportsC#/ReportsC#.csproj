@@ -164,6 +164,12 @@
     <Compile Include="Interfaz\RegisterF\RegisterPrestamos.Designer.cs">
       <DependentUpon>RegisterPrestamos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\ReportesF\AmortizacionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\ReportesF\AmortizacionForm.Designer.cs">
+      <DependentUpon>AmortizacionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\ReportesF\ClientList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     <EmbeddedResource Include="Interfaz\RegisterF\RegisterPrestamos.resx">
       <DependentUpon>RegisterPrestamos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\ReportesF\AmortizacionForm.resx">
+      <DependentUpon>AmortizacionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\ReportesF\ClientList.resx">
       <DependentUpon>ClientList.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,6 +277,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\Amortizacion.rdlc" />
     <EmbeddedResource Include="Reportes\Clients.rdlc" />
     <EmbeddedResource Include="Reportes\MClients2.rdlc" />
     <EmbeddedResource Include="Reportes\MClients.rdlc" />

@@ -1,6 +1,5 @@
 ﻿using Logica.clases;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -16,6 +15,7 @@ namespace ReportsC_.Interfaz.RegisterF
         public decimal Salary;
         public string Correo;
         public int UID;
+        public string mode;
 
         public void CalcFinanzas()
         {
@@ -49,16 +49,7 @@ namespace ReportsC_.Interfaz.RegisterF
                 return;
             }
 
-
             Prestamo p = new Prestamo(UID, (int)months.Value, (double)amount.Value);
-
-            if (p.checkPrestamo())
-            {
-                MessageBox.Show("Ya tiene un prestamo realizado","PRESTAMO YA REALIZADO",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                Close();
-                return;
-            }
-
             AmortizacionTableForm f = new AmortizacionTableForm();
 
             f.data.AutoGenerateColumns = true;
@@ -73,17 +64,27 @@ namespace ReportsC_.Interfaz.RegisterF
             Close();
         }
 
-        private void nameClient_TextChanged(object sender, EventArgs e)
+        private void RegisterPrestamos_Load(object sender, EventArgs e)
+        {
+            if (mode != "client")
+            {
+                Cliente c = new Cliente(0);
+                foreach (string correo in c.getCorreos())
+                {
+                    nameClient.Items.Add(correo);
+                }
+                return;
+            }
+
+            nameClient.Items.Add(Correo);
+        }
+
+        private void months_ValueChanged(object sender, EventArgs e)
         {
             CalcFinanzas();
         }
 
-        private void RegisterPrestamos_Load(object sender, EventArgs e)
-        {
-            nameClient.Text = Correo;
-        }
-
-        private void months_ValueChanged(object sender, EventArgs e)
+        private void nameClient_SelectedIndexChanged(object sender, EventArgs e)
         {
             CalcFinanzas();
         }

@@ -30,9 +30,13 @@ namespace ReportsC_.Interfaz.RegisterF
 
         private void mora_ValueChanged(object sender, EventArgs e)
         {
+            if (mora.Value == 0)
+                return;
+
+            int Mes = ((int)month.Value <= 1) ? (int)month.Value : (int)month.Value - 1;
             Cliente c = new Cliente("", clientEmail.Text);
             Prestamo p = new Prestamo(UID, (int)monthsLeft.Value, (double)c.getSalary()*4);
-            Amortizacion a = new Amortizacion(p.getLoanId(), (int)month.Value-1);
+            Amortizacion a = new Amortizacion(p.getLoanId(), Mes);
 
             if (monthsLeft.Value == 0)
                 return;
@@ -53,12 +57,16 @@ namespace ReportsC_.Interfaz.RegisterF
             sueldoActual.Value = Math.Round(sueldoAnterior.Value - couta);
         }
 
-        private void RegisterAmortizacionForm_Load(object sender, EventArgs e)
+        private async void RegisterAmortizacionForm_Load(object sender, EventArgs e)
         {
-          
+            Cliente c = new Cliente(0);
+            foreach(string name in c.getCorreos())
+            {
+                clientEmail.Items.Add(name);
+            }
         }
 
-        private void clientEmail_TextChanged(object sender, EventArgs e)
+        private void clientEmail_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
@@ -66,7 +74,7 @@ namespace ReportsC_.Interfaz.RegisterF
                 UID = c.getId();
                 Prestamo p = new Prestamo(UID);
                 Amortizacion a = new Amortizacion(p.getLoanId());
-               
+
 
                 if (a.getDeposit() == -1)
                 {

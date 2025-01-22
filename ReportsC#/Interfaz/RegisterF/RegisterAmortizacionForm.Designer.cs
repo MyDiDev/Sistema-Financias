@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label5 = new System.Windows.Forms.Label();
-            this.clientEmail = new System.Windows.Forms.TextBox();
             this.clientName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.mora = new System.Windows.Forms.NumericUpDown();
@@ -46,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.monthsLeft = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
+            this.clientEmail = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.mora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deposit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.intMora)).BeginInit();
@@ -67,19 +67,6 @@
             this.label5.Size = new System.Drawing.Size(149, 22);
             this.label5.TabIndex = 24;
             this.label5.Text = "Correo del cliente:";
-            // 
-            // clientEmail
-            // 
-            this.clientEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.clientEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(10)))), ((int)(((byte)(127)))));
-            this.clientEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.clientEmail.Font = new System.Drawing.Font("Segoe UI Variable Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clientEmail.ForeColor = System.Drawing.SystemColors.Window;
-            this.clientEmail.Location = new System.Drawing.Point(556, 179);
-            this.clientEmail.Name = "clientEmail";
-            this.clientEmail.Size = new System.Drawing.Size(293, 20);
-            this.clientEmail.TabIndex = 23;
-            this.clientEmail.TextChanged += new System.EventHandler(this.clientEmail_TextChanged);
             // 
             // clientName
             // 
@@ -339,12 +326,27 @@
             this.label8.TabIndex = 39;
             this.label8.Text = "Meses Restantes:";
             // 
+            // clientEmail
+            // 
+            this.clientEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.clientEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(10)))), ((int)(((byte)(127)))));
+            this.clientEmail.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.clientEmail.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.clientEmail.ForeColor = System.Drawing.Color.White;
+            this.clientEmail.FormattingEnabled = true;
+            this.clientEmail.Location = new System.Drawing.Point(556, 179);
+            this.clientEmail.Name = "clientEmail";
+            this.clientEmail.Size = new System.Drawing.Size(293, 24);
+            this.clientEmail.TabIndex = 41;
+            this.clientEmail.SelectedIndexChanged += new System.EventHandler(this.clientEmail_SelectedIndexChanged);
+            // 
             // RegisterAmortizacionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(7)))), ((int)(((byte)(178)))));
             this.ClientSize = new System.Drawing.Size(961, 641);
+            this.Controls.Add(this.clientEmail);
             this.Controls.Add(this.monthsLeft);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.month);
@@ -361,7 +363,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.clientEmail);
             this.Controls.Add(this.clientName);
             this.Name = "RegisterAmortizacionForm";
             this.Text = "RegisterAmortizacionForm";
@@ -392,11 +393,11 @@
         private System.Windows.Forms.NumericUpDown sueldoActual;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.TextBox clientEmail;
         public System.Windows.Forms.NumericUpDown deposit;
         public System.Windows.Forms.NumericUpDown month;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.NumericUpDown monthsLeft;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox clientEmail;
     }
 }
