@@ -68,13 +68,3 @@ VALUES
 (1, 2, 13500.00, 1500.00, 12000.00, 1, 1650),  
 (2, 1, 12000.00, 1200.00, 10800.00, 3, 1597.2),  
 (3, 1, 18000.00, 1800.00, 16200.00, 0, 0);  
-
-SELECT Clientes.Moras
-FROM Clientes
-JOIN Prestamos ON Clientes.IDCliente = Prestamos.IDCliente
-WHERE Clientes.IDCliente = 4;
-
-SELECT * FROM Prestamos;
-SELECT * FROM Amortizaciones WHERE IDPrestamo=4;
-SELECT * FROM Admins;
-SELECT * FROM Clientes;
