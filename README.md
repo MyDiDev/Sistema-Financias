@@ -71,7 +71,7 @@ Una vez que hayas instalado el sistema, sigue los siguientes pasos para utilizar
 
 - Haz un fork de este repositorio.
 - Crea una rama para tu nueva característica (```git checkout -b feature-nueva-caracteristica```).
-- Realiza los cambios y haz un commit (```git commit -am 'Agregar nueva característica'```).
+- Realiza los cambios y haz un commit (```git commit -m 'Agregar nueva característica'```).
 - Sube los cambios (```git push origin feature-nueva-caracteristica```).
 - Crea un pull request describiendo los cambios realizados.
 
