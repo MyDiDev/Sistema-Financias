@@ -384,20 +384,20 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label clientName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown mora;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown intMora;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown sueldoAnterior;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown sueldoActual;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.NumericUpDown deposit;
         public System.Windows.Forms.NumericUpDown month;
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.NumericUpDown monthsLeft;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox clientEmail;
+        public System.Windows.Forms.NumericUpDown mora;
+        public System.Windows.Forms.NumericUpDown intMora;
+        public System.Windows.Forms.NumericUpDown sueldoAnterior;
+        public System.Windows.Forms.NumericUpDown sueldoActual;
+        public System.Windows.Forms.ComboBox clientEmail;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label label8;
     }
 }

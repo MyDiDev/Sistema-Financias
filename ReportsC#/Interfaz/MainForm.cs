@@ -120,6 +120,7 @@ namespace ReportsC_.Interfaz
             f.nameLabel.Text = $"Cliente: {Nombre}";
             f.Correo = Correo;
             f.data.DataSource = a.getAmortizacionData();
+            f.amortizarBtn.Visible = true;
             OpenForm(f);
         }
 

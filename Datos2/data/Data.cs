@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace Datos.data
 {
@@ -684,6 +685,27 @@ namespace Datos.data
 
                             return depositValue;
                         }
+                    }
+                }
+            }catch(SqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public bool RegisterAmortizacion(int id, int mes)
+        {
+            try
+            {
+                using(SqlConnection conn = new SqlConnection(stringConnection))
+                {
+                    conn.Open();
+                    using(SqlCommand cmd = new SqlCommand("DELETE FROM Amortizaciones WHERE IDPrestamo=@id AND Mes=@mes;", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@mes", mes);
+                        cmd.ExecuteNonQuery();
+                        return true;
                     }
                 }
             }catch(SqlException e)

@@ -47,5 +47,6 @@ namespace Logica.clases
         public decimal getLastSalary() => data.GetLastSalary(PrestamoId, Mes);
         public bool actualizarAmortizacion() => data.UpdateAm(PrestamoId, Mes, MontoAnterior, MontoAbonado, NuevoMonto, InteresMora, Mora);
         public List<string> getAmortizacionId() => data.getAmId();
+        public bool registrarAmortizacion() => data.RegisterAmortizacion(PrestamoId, Mes);
     }
 }

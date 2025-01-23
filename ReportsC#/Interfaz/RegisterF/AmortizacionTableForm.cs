@@ -17,7 +17,7 @@ namespace ReportsC_.Interfaz.RegisterF
         public DateTime fechaPrestamo;
         public string mode;
 
-        private void button1_Click(object sender, System.EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             switch (mode)
             {
