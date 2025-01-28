@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using ReportsC_.Interfaz.Login;
 using ReportsC_.Interfaz.ClientData;
 using ReportsC_.Interfaz.RegisterF;
+using System.Data;
 
 namespace ReportsC_.Interfaz
 {
@@ -115,12 +116,17 @@ namespace ReportsC_.Interfaz
 
             Amortizacion a = new Amortizacion(prestamoId);
             CientDataForm f = new CientDataForm();
+            DataTable clientData = a.getRegisteredAmortizacion();
+            DataTable data = a.getAmortizacionData();
 
             f.title.Text = "Amortizaciones";
             f.nameLabel.Text = $"Cliente: {Nombre}";
             f.Correo = Correo;
-            f.data.DataSource = a.getAmortizacionData();
+            f.UID = UID;
             f.amortizarBtn.Visible = true;
+            f.data.DataSource = clientData;
+            f.Data = data;
+
             OpenForm(f);
         }
 

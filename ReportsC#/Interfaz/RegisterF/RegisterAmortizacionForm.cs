@@ -26,11 +26,10 @@ namespace ReportsC_.Interfaz.RegisterF
                     Prestamo p = new Prestamo(UID);
                     Amortizacion a = new Amortizacion(p.getLoanId(), (int)month.Value);
 
-                    if (a.registrarAmortizacion()){
+                    if (a.registerAmortizacion()){
                         MessageBox.Show("Amortizacion registrada");
                         Close();
                     }
-
                     break;
                 default:
                     AmortizacionTableForm f = new AmortizacionTableForm();
@@ -88,6 +87,16 @@ namespace ReportsC_.Interfaz.RegisterF
             switch (mode)
             {
                 case "register":
+                    
+                    if (couta == 0 && intMora.Value == 0 && sueldoAnterior.Value == 0 && sueldoActual.Value == 0
+                        && month.Value == 0)
+                    {
+                        Prestamo p = new Prestamo(UID);
+                        p.actualizarPrestamo(p.getLoanId());
+                        MessageBox.Show("Ya no tienes mas amortizaciones", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+                    
                     clientEmail.Items.Add(Correo);
                     break;
                 default:

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 
 namespace Datos.data
 {
@@ -421,6 +420,26 @@ namespace Datos.data
             }
         }
 
+        public bool updatePrestamo(int idP)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(stringConnection))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Prestamos SET Estado='realizado' WHERE IDPrestamo=@id;", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", idP);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }catch(SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
         public bool MakeLoan(int ClientID, decimal monto, int meses, double interes, DateTime fechaPrestamo, bool garantia, string Estado)
         {
             try
@@ -489,7 +508,7 @@ namespace Datos.data
                 {
                     conn.Open();
 
-                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM Amortizaciones WHERE IDPrestamo=@id", conn))
+                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM Amortizaciones WHERE IDPrestamo=@id AND Estado='no realizado';", conn))
                     {
                         cmd.Parameters.AddWithValue("@id", pId);
 
@@ -693,6 +712,32 @@ namespace Datos.data
             }
         }
 
+        public DataTable getCheckedAmortizaciones(int id)
+        {
+            try
+            {
+                using(SqlConnection conn = new SqlConnection(stringConnection))
+                {
+                    conn.Open();
+
+                    using(SqlCommand cmd = new SqlCommand("SELECT * FROM Amortizaciones WHERE IDPrestamo=@id AND Estado='realizado';", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }catch(SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        
         public bool RegisterAmortizacion(int id, int mes)
         {
             try
@@ -700,7 +745,7 @@ namespace Datos.data
                 using(SqlConnection conn = new SqlConnection(stringConnection))
                 {
                     conn.Open();
-                    using(SqlCommand cmd = new SqlCommand("DELETE FROM Amortizaciones WHERE IDPrestamo=@id AND Mes=@mes;", conn))
+                    using(SqlCommand cmd = new SqlCommand("UPDATE Amortizaciones SET Estado='realizado' WHERE IDPrestamo=@id AND Mes=@mes;", conn))
                     {
                         cmd.Parameters.AddWithValue("@id", id);
                         cmd.Parameters.AddWithValue("@mes", mes);

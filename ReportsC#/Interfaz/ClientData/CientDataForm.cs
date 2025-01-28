@@ -1,6 +1,8 @@
 ﻿using Logica.clases;
+using Microsoft.Reporting.WinForms.Internal.Soap.ReportingServices2005.Execution;
 using ReportsC_.Interfaz.RegisterF;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -16,28 +18,44 @@ namespace ReportsC_.Interfaz.ClientData
         public string Correo;
         public int UID;
         public decimal couta;
+        public int mes;
+        public DataTable Data;
+
+        private DataTable getAmortizacion()
+        {
+            Prestamo p = new Prestamo(UID);
+            int prestamoId = p.getLoanId();
+
+            Amortizacion a = new Amortizacion(prestamoId);
+            DataTable clientData = a.getRegisteredAmortizacion();
+
+
+            return clientData;
+        }
 
         private void CientDataForm_Load(object sender, EventArgs e)
         {
+            data.DataSource = getAmortizacion();
         }
 
         private void amortizarBtn_Click(object sender, EventArgs e)
         {
-            int mes = 0;
+            mes = 0;
             decimal montoAnterior = 0;
             decimal montoAbonado = 0;
             decimal nuevoMonto = 0;
             decimal intMora = 0;
             int mora = 0;
 
-            foreach (DataGridViewRow row in data.SelectedRows)
+            foreach (DataRow row in Data.Rows)
             {
-                mes = (int)row.Cells[2].Value;
-                montoAnterior = (decimal)row.Cells[3].Value;
-                montoAbonado = (decimal)row.Cells[4].Value;
-                nuevoMonto = (decimal)row.Cells[5].Value;
-                intMora = (decimal)row.Cells[6].Value;
-                mora = Convert.ToInt32(row.Cells[7].Value);
+                mes = (int)row["Mes"];
+                montoAnterior = (decimal)row["MontoAnterior"];
+                montoAbonado = (decimal)row["MontoAbonado"];
+                nuevoMonto = (decimal)row["NuevoMonto"];
+                intMora = (decimal)row["InteresMora"];
+                mora = (int)row["Mora"];
+                break;
             }
 
             RegisterAmortizacionForm f = new RegisterAmortizacionForm();
@@ -55,8 +73,16 @@ namespace ReportsC_.Interfaz.ClientData
             f.Correo = Correo;
             f.button1.Text = "Registrar Amortizacion";
             f.label8.Visible = false;
-
+            
             f.ShowDialog();
+
+            
+
+        }
+
+        private void CientDataForm_Close(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

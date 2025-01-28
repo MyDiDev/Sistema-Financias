@@ -190,7 +190,6 @@ namespace Logica.clases
 
             return dt;
         }
-
         public bool realizarPrestamo(string Estado)
         {
             try
@@ -214,5 +213,6 @@ namespace Logica.clases
         }
         public bool checkPrestamo() => data.checkPrestamo(Id);
         public DataTable getLoanData() => data.GetLoanData(Id);
+        public bool actualizarPrestamo(int id) => data.updatePrestamo(id);
     }
 }
